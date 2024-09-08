@@ -22,7 +22,7 @@ export default function Home() {
         setMenuState('main');
     };
 
-    const showSubMenu = (menu) => {
+    const showSubMenu = (menu: string) => {
         setMenuState(menu);
     };
 
