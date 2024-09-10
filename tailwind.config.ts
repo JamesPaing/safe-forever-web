@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gray: "#D4D4D4",
+        gray: "#444444",
         mininav: "#F1F5F9",
-        rosesecondary: "#EF4444",
-        rose: "#FB7185",
+        rosesecondary: "#DC2626",
+        rose: "#E11D48",
         mild: "#E7E5E4",
-
+        darkblue: "#1D2736",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

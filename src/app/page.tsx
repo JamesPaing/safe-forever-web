@@ -1,14 +1,16 @@
 'use client';
 
 import Image from 'next/image';
-import { FaFacebook, FaTwitter, FaPinterest, FaLinkedin, FaPaperPlane, FaGooglePlusG } from 'react-icons/fa';
-import { useState } from 'react';
+import { FaFacebook, FaTwitter, FaPinterest, FaLinkedin, FaPaperPlane, FaGooglePlusG, FaVideo, FaArrowLeft, FaCalendar, FaArrowRight, FaUser } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 SwiperCore.use([Navigation]);
+import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -30,18 +32,105 @@ export default function Home() {
         setMenuState('main');
     };
 
+    const services = [
+        {
+            id: 1,
+            title: 'Private/Home Security',
+            image: '/img1.jpg',
+            description: 'Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid',
+        },
+        {
+            id: 2,
+            title: 'Transport Security',
+            image: '/slider2.jpeg',
+            description: 'Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid',
+        },
+        {
+            id: 3,
+            title: 'Maintain Security',
+            image: '/img1.jpg',
+            description: 'Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid',
+        },
+        {
+            id: 4,
+            title: 'Business Security',
+            image: '/img1.jpg',
+            description: 'Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid',
+        },
+    ]
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
-        prevArrow: <button className="slick-arrow slick-prev"><i className="fa fa-angle-left"></i></button>,
-        nextArrow: <button className="slick-arrow slick-next"><i className="fa fa-angle-right"></i></button>,
+        responsive: [
+            {
+                breakpoint: 1024, // Tablet
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 768, // Mobile
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+
+                },
+            },
+        ],
     };
 
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    const blogPosts = [
+        {
+            id: 1,
+            title: 'Webcam Security sit amet.',
+            image: '/img1.jpg',
+            date: 'Sep 14, 2018',
+            author: 'Admin',
+            excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eius tempor incididu ut labore et dolore.Discover the latest trends for your business growth.',
+        },
+        {
+            id: 2,
+            title: 'Digital Marketing Strategies',
+            image: '/img1.jpg',
+            date: 'Oct 22, 2018',
+            author: 'Jane Doe',
+            excerpt: 'Discover the latest trends in digital marketing and how to implement them for your business growth.',
+        },
+        {
+            id: 3,
+            title: 'The Future of AI in Business',
+            image: '/img1.jpg',
+            date: 'Nov 05, 2018',
+            author: 'John Smith',
+            excerpt: 'Explore how artificial intelligence is shaping the future of businesses across various industries.',
+        },
+        {
+            id: 4,
+            title: 'Cybersecurity Best Practices',
+            image: '/img1.jpg',
+            date: 'Dec 10, 2018',
+            author: 'Alice Johnson',
+            excerpt: 'Learn about the essential cybersecurity practices to protect your organization from digital threats.',
+        },
+    ]
+
+    if (!mounted) {
+        return null
+    }
+
+
     return (
-        <main>
+        <main className='scroll-smooth'>
             {/* Header Start */}
 
             <header>
@@ -69,7 +158,7 @@ export default function Home() {
                 <div className="header-bottom-area py-4 container mx-auto flex justify-around items-center px-4 lg:px-8">
                     {/* Logo Section */}
                     <div className="w-1/4">
-                        <a href="index.html">
+                        <a href="/">
                             <Image
                                 src="/logo.jpg"
                                 alt="logo"
@@ -81,38 +170,45 @@ export default function Home() {
                     </div>
 
                     {/* Navigation for Large Screens */}
-                    <nav className="hidden lg:flex flex-col lg:flex-row lg:w-3/4 lg:justify-end items-center px-5">
-                        <ul className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-2 px-5 py-5">
+                    <nav className="hidden lg:flex flex-col lg:flex-row lg:w-3/4 lg:justify-end items-center px-5 text-darkblue font-bold">
+                        <ul className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-2 px-5 py-5 items-center">
                             <li className="relative group">
-                                <a href="#" className="hover:text-rosesecondary border-spacing-1 p-3">HOME</a>
+                                <a href="/" className="hover:text-rosesecondary border-spacing-1 p-3">HOME</a>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] h-auto hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
-                                    <li className="py-2"><a href="#" className="hover:text-rosesecondary">Home One</a></li>
-                                    <li className="py-2"><a href="#" className="hover:text-rosesecondary">Boxed Layout Page</a></li>
+                                    <li className="py-2"><a href="/" className="hover:text-rosesecondary">Home One</a></li>
+                                    <li className="py-2"><a href="/" className="hover:text-rosesecondary">Boxed Layout Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/src/app/about-us/page.jsx" className="hover:text-rosesecondary p-3">ABOUT</a></li>
+                            <li><a href="about-us" className="hover:text-rosesecondary p-3">ABOUT</a></li>
                             <li className="relative group">
-                                <a href="/src/app/services/page.jsx" className="hover:text-rosesecondary p-3">SERVICES</a>
+                                <a href="services" className="hover:text-rosesecondary p-3">SERVICES</a>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
-                                    <li className="py-2"><a href="#" className="hover:text-rosesecondary">Service Page</a></li>
-                                    <li className="py-2"><a href="#" className="hover:text-rosesecondary">Service Detail Page</a></li>
+                                    <li className="py-2"><a href="services" className="hover:text-rosesecondary">Service Page</a></li>
+                                    <li className="py-2"><a href="services" className="hover:text-rosesecondary">Service Detail Page</a></li>
                                 </ul>
                             </li>
                             <li className="relative group">
-                                <a href="/src/app/posts/page.jsx" className="hover:text-rosesecondary p-3">BLOG</a>
+                                <a href="posts" className="hover:text-rosesecondary p-3">BLOG</a>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
-                                    <li className="py-2"><a href="#" className="hover:text-rosesecondary">Blog Page</a></li>
-                                    <li className="py-2"><a href="#" className="hover:text-rosesecondary">Blog Detail Page</a></li>
+                                    <li className="py-2"><a href="posts" className="hover:text-rosesecondary">Blog Page</a></li>
+                                    <li className="py-2"><a href="posts" className="hover:text-rosesecondary">Blog Detail Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/src/app/contact-us/page.jsx" className="hover:text-rosesecondary p-3">CONTACT</a></li>
+                            <li><a href="contact-us" className="hover:text-rosesecondary p-3">CONTACT</a></li>
                             <li>
-                                <a className="btn bg-rosesecondary text-black hover:bg-rose hover:text-white px-9 p-3 rounded-full transition-transform duration-300 ease-linear" href="#">
-                                    Buy now
+                                <a href="/"
+                                    className="relative inline-flex items-center justify-center px-10 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
+               before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
+               hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
+               after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
+               hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
+               before:-z-10 after:-z-10 z-10">
+                                    Buy Now
                                 </a>
                             </li>
                         </ul>
                     </nav>
+
 
                     {/* Mobile/Tablet View (hamburger menu) */}
                     <div className="lg:hidden">
@@ -125,7 +221,7 @@ export default function Home() {
                 </div>
 
                 {/* Sidebar for Mobile/Tablet View */}
-                <div className={`fixed top-0 left-0 w-[300px] h-full bg-mild text-black transition-transform duration-300 ease-in-out z-50 ${sidebarVisible ? 'translate-x-0' : '-translate-x-full'}`}>
+                <div className={`fixed top-0 left-0 w-[330px] h-full bg-mild text-black transition-transform duration-300 ease-in-out z-50 ${sidebarVisible ? 'translate-x-0' : '-translate-x-full'}`}>
                     <div className="p-5">
                         <button onClick={toggleSidebar} className="text-black">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
@@ -225,7 +321,15 @@ export default function Home() {
                                     </ul>
                                 </div>
 
-                                <a className="btn bg-transparent bg-red-300 hover:bg-rose hover:text-white py-3 rounded-full w-[120px] transition-transform duration-300 ease-linear flex justify-center mt-5 mx-auto" href="#">Buy Now</a>
+                                <a href="/"
+                                    className="w-[150px] mt-6 mx-16 relative inline-flex items-center justify-center px-10 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
+               before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
+               hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
+               after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
+               hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
+               before:-z-10 after:-z-10 z-10">
+                                    Buy Now
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -256,9 +360,24 @@ export default function Home() {
                                 <p className="text-mild md:text-lg text-gray-200 mt-5 mb-10">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 </p>
-                                <a href="contact-us.html" className="btn bg-rosesecondary text-black hover:bg-rose hover:text-white rounded-full px-10 py-3">
+                                <a href="/"
+                                    className="relative inline-flex items-center justify-center px-10 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
+   before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
+   hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
+   after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
+   hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
+   before:-z-10 after:-z-10 z-10">
                                     Get Appointment
                                 </a>
+
+
+
+
+
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -268,74 +387,76 @@ export default function Home() {
 
 
             {/* Single Service Start */}
-            <div className="bg-gray-100 w-full mb-20">
-                <div className="mx-auto">
+            <div className="bg-gray-100 w-full mb-20 font-light">
+                <div className="mx-auto ">
                     <div className="flex flex-wrap flex-row">
-
                         {/* Service1 */}
                         <div className="w-full sm:w-1/2 lg:w-1/4">
-                            <div className="bg-mild p-6 shadow-lg h-full flex flex-row">
-                                <div className="flex justify-center items-start mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
-                                    </svg>
+                            <div className="bg-mild p-6 shadow-lg flex flex-col h-full">
+                                <div className="flex flex-row mb-4">
+                                    <div className="flex-shrink-0 mr-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-xl font-semibold text-darkblue">Webcam Security</h4>
                                 </div>
-                                <div className="flex-grow">
-                                    <h4 className="text-xl font-semibold mb-2">Webcam Security</h4>
+                                <div className="flex-grow min-h-0 ml-10">
                                     <p className="text-gray-700">Access complete visibility through your phone or device. We provide a complete range of security solutions, day and night vision to improve security & enhance capabilities.</p>
                                 </div>
                             </div>
                         </div>
-                        {/* Service1 */}
 
                         {/* Service2 */}
                         <div className="w-full sm:w-1/2 lg:w-1/4">
-                            <div className="bg-graysecondary p-6 shadow-lg h-full flex flex-row">
-                                <div className="flex justify-center items-start mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15L15 9.75M12 2.714A12.04 12.04 0 003.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152C18.698 5.5 15.794 4.252 13.5 2.714z" />
-                                    </svg>
+                            <div className="bg-graysecondary p-6 shadow-lg flex flex-col h-full">
+                                <div className="flex flex-row mb-4">
+                                    <div className="flex-shrink-0 mr-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15L15 9.75M12 2.714A12.04 12.04 0 003.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152C18.698 5.5 15.794 4.252 13.5 2.714z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-xl font-semibold text-darkblue">Security Guard</h4>
                                 </div>
-                                <div className="flex-grow">
-                                    <h4 className="text-xl font-semibold mb-2">Security Guard</h4>
+                                <div className="flex-grow min-h-0  ml-10">
                                     <p className="text-gray-700">Alarm services to suit the right environment. From wired to wireless systems, Remote Monitored and Integrating systems. We install all alarms to suit the needs of the location.</p>
                                 </div>
                             </div>
                         </div>
-                        {/* Service2 */}
 
                         {/* Service3 */}
                         <div className="w-full sm:w-1/2 lg:w-1/4">
-                            <div className="bg-mild p-6 shadow-lg h-full flex flex-row">
-                                <div className="flex justify-center items-start mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                                    </svg>
+                            <div className="bg-mild p-6 shadow-lg flex flex-col h-full">
+                                <div className="flex flex-row mb-4">
+                                    <div className="flex-shrink-0 mr-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-xl font-semibold text-darkblue">Motivated Guards</h4>
                                 </div>
-                                <div className="flex-grow">
-                                    <h4 className="text-xl font-semibold mb-2">Motivated Guards</h4>
+                                <div className="flex-grow min-h-0  ml-10">
                                     <p className="text-gray-700">Combining identification technology with security solutions to give you a high level of protection, whether your business has a single or multi-site entry points.</p>
                                 </div>
                             </div>
                         </div>
-                        {/* Service3 */}
 
                         {/* Service4 */}
                         <div className="w-full sm:w-1/2 lg:w-1/4">
-                            <div className="bg-graysecondary p-6 shadow-lg h-full flex flex-row">
-                                <div className="flex justify-center items-start mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
+                            <div className="bg-graysecondary p-6 shadow-lg flex flex-col h-full">
+                                <div className="flex flex-row mb-4">
+                                    <div className="flex-shrink-0 mr-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-xl font-semibold text-darkblue">24/7 Services</h4>
                                 </div>
-                                <div className="flex-grow">
-                                    <h4 className="text-xl font-semibold mb-2">24/7 Services</h4>
+                                <div className="flex-grow min-h-0 ml-10">
                                     <p className="text-gray-700">We offer & manage ongoing maintenance of your security systems. Keeping it working as it should be and keeping up with improvements that can be made.</p>
                                 </div>
                             </div>
                         </div>
-                        {/* Service4 */}
-
                     </div>
                 </div>
             </div>
@@ -343,7 +464,7 @@ export default function Home() {
 
 
             {/* Agency Start*/}
-            <div className="section-agency-benefit flex items-center justify-center md:pt-3">
+            <div className="section-agency-benefit flex items-center justify-center md:pt-3 text-darkblue">
                 <div className="container flex items-center justify-start px-0">
                     <div className="flex flex-col lg:flex-row max-w-6xl h-auto lg:h-[600px] items-start w-full">
                         {/* Content */}
@@ -364,8 +485,14 @@ export default function Home() {
                                     <p className="mb-6">
                                         In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
                                     </p>
-                                    <a href="#" className="btn bg-rosesecondary text-base hover:bg-rose hover:text-mild transition-transform duration-300 ease-linear px-6 py-3 rounded-full mt-6 w-[160px] justify-center items-center">
-                                        CONTACT US
+                                    <a href="/"
+                                        className="w-[180px] relative inline-flex items-center justify-center mt-6 px-6 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
+   before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
+   hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
+   after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
+   hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
+   before:-z-10 after:-z-10 z-10">
+                                        Contact Us
                                     </a>
                                 </div>
                             </div>
@@ -381,13 +508,18 @@ export default function Home() {
                                     className="object-cover rounded-lg shadow-md w-full h-auto"
                                     width={800}
                                     height={600}
-                                    layout="responsive"
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <a className="video-popup bg-white p-4 rounded-full shadow-lg hover:scale-105 transition-transform" href="https://www.youtube.com/watch?v=G_G8SdXktHg">
-                                        <i className="fa fa-play text-rose"></i>
+                                    <a
+                                        className="video-popup bg-rose p-3 rounded-full shadow-lg hover:scale-105 transition-transform"
+                                        href="https://www.youtube.com/watch?v=k30tMU5XdTw"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i className="text-darkblue text-3xl"><FaVideo /></i>
                                     </a>
                                 </div>
+
                             </div>
                         </div>
 
@@ -398,171 +530,83 @@ export default function Home() {
 
 
             {/* Service Start */}
-            <div className="section-service bg-gray-100 py-10  bg-mild">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold mb-4">Our Services</h2>
+            <div className="section-service bg-mild py-10 mt-10">
+                <div className="container mx-auto px-4 my-10">
+                    <div className="text-center mb-12 text-darkblue">
+                        <h2 className="text-4xl font-bold mb-4 sm:text-3xl xs:text-2xl">Our Services</h2>
                         <div className="flex w-full h-0.5 justify-center items-center mb-4">
-                            <div className="w-[4%] h-[80%] bg-black"></div>
-                            <div className="w-[3%] h-full bg-rose border-2 border-rose"></div>
-                            <div className="w-[4%] h-[80%] bg-black"></div>
+                            <div className="w-[4%] h-full bg-black"></div>
+                            <div className="w-[3%] h-[4px] bg-rosesecondary"></div>
+                            <div className="w-[4%] h-full bg-black"></div>
                         </div>
-                        <p className="text-gray-600">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do <br />
+                        <p className="text-gray-600 font-light px-4 sm:text-sm xs:text-xs">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do <br className="hidden sm:inline" />
                             eiusmod tempor incididunt ut labore
                         </p>
                     </div>
 
-                    <Swiper
-                        modules={[Navigation]}
-                        navigation
-                        spaceBetween={20}
-                        slidesPerView={1}
-                        loop={true}
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 1,
-                                spaceBetween: 20,
-                            },
-                            768: {
-                                slidesPerView: 2,
-                                spaceBetween: 20,
-                            },
-                            1024: {
-                                slidesPerView: 3,
-                                spaceBetween: 20,
-                            },
-                        }}
-                        className="mySwiper"
-                    >
-                        {/* SwiperSlide 1 */}
-                        <SwiperSlide>
-                            <div className="service text-center bg-white shadow-lg rounded-lg overflow-hidden">
-                                <div className="thumb">
-                                    <a href="service-details.html">
-                                        <Image
-                                            src="/img1.jpg"
-                                            alt="Security Img"
-                                            className="w-full sm:h-[15rem] md:h-[20rem] lg:h-[25rem] object-center"
-                                            width={800}
-                                            height={300}
-                                        />
-                                    </a>
-                                </div>
-                                <div className="content p-6">
-                                    <h4 className="text-xl font-semibold mb-2">
-                                        <a href="service-details.html">Private/Home Security</a>
-                                    </h4>
-                                    <p className="text-gray-600 mb-4">
-                                        Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid
-                                    </p>
-                                    <a
-                                        className="text-rose border border-none py-2 px-4 rounded inline-block hover:text-aqua hover:border-aqua transition-colors duration-300 ease-in-out"
-                                        href="service-details.html"
-                                    >
+                    <div className="relative group">
+                        <Swiper
+                            modules={[Navigation, Pagination]}
+                            spaceBetween={30}
+                            slidesPerView={3}
+                            navigation={{
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            }}
+                            loop={true}
+                            breakpoints={{
+                                320: { slidesPerView: 1, spaceBetween: 10 },
+                                640: { slidesPerView: 1, spaceBetween: 20 },
+                                768: { slidesPerView: 2, spaceBetween: 20 },
+                                1024: { slidesPerView: 3, spaceBetween: 30 },
+                            }}
+                            className="w-full"
+                        >
+                            {services.map((service) => (
+                                <SwiperSlide key={service.id}>
+                                    <div className="bg-background rounded-lg overflow-hidden shadow-md mb-8 flex flex-col h-full">
+                                        <div className="w-full h-48 relative sm:h-40 xs:h-36">
+                                            <Image
+                                                src={service.image}
+                                                alt={service.title}
+                                                layout='fill'
+                                                objectFit="cover"
+                                            />
+                                        </div>
+                                        <div className="flex-grow flex flex-col justify-between p-6 sm:p-4 xs:p-3">
+                                            <div>
+                                                <h4 className="text-xl font-semibold mb-2 sm:text-lg xs:text-base">
+                                                    <a href="/services" className="text-primary hover:text-primary/80 transition-colors">
+                                                        {service.title}
+                                                    </a>
+                                                </h4>
+                                                <p className="text-muted-foreground mb-4 sm:text-sm xs:text-xs">{service.description}</p>
+                                            </div>
+                                            <div className="text-center mt-auto">
+                                                <a
+                                                    href="/services"
+                                                    className="relative inline-flex items-center justify-center px-6 py-3 rounded-full text-white bg-primary text-base overflow-hidden transition-all duration-300 ease-in-out 
+                    before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
+                    hover:before:skew-x-5 hover:before:translate-x-full hover:before:scale-x-100 
+                    after:content-[''] after:absolute after:inset-0 after:bg-secondary after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
+                    hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
+                    before:-z-10 after:-z-10 z-10
+                    sm:text-sm sm:px-4 sm:py-2
+                    xs:text-xs xs:px-3 xs:py-1.5"
+                                                >
+                                                    READ MORE
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
 
-                                        READ MORE
-                                    </a>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* SwiperSlide 2 */}
-                        <SwiperSlide>
-                            <div className="service text-center bg-white shadow-lg rounded-lg overflow-hidden">
-                                <div className="thumb">
-                                    <a href="service-details.html">
-                                        <Image
-                                            src="/img1.jpg"
-                                            alt="Transport Security"
-                                            className="w-full sm:h-[15rem] md:h-[20rem] lg:h-[25rem] object-center"
-                                            width={800}
-                                            height={200}
-                                        />
-                                    </a>
-                                </div>
-                                <div className="content p-6">
-                                    <h4 className="text-xl font-semibold mb-2">
-                                        <a href="service-details.html">Transport Security</a>
-                                    </h4>
-                                    <p className="text-gray-600 mb-4">
-                                        Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid
-                                    </p>
-                                    <a
-                                        className="text-rose border border-none py-2 px-4 rounded inline-block hover:text-aqua hover:border-aqua transition-colors duration-300 ease-in-out"
-                                        href="service-details.html"
-                                    >
-
-                                        READ MORE
-                                    </a>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* SwiperSlide 3 */}
-                        <SwiperSlide>
-                            <div className="service text-center bg-white shadow-lg rounded-lg overflow-hidden">
-                                <div className="thumb">
-                                    <a href="service-details.html">
-                                        <Image
-                                            src="/img1.jpg"
-                                            alt="Maintain Security"
-                                            className="w-full sm:h-[15rem] md:h-[20rem] lg:h-[25rem] object-center"
-                                            width={800}
-                                            height={200}
-                                        />
-                                    </a>
-                                </div>
-                                <div className="content p-6">
-                                    <h4 className="text-xl font-semibold mb-2">
-                                        <a href="service-details.html">Maintain Security</a>
-                                    </h4>
-                                    <p className="text-gray-600 mb-4">
-                                        Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid
-                                    </p>
-                                    <a
-                                        className="text-rose border border-none py-2 px-4 rounded inline-block hover:text-aqua hover:border-aqua transition-colors duration-300 ease-in-out"
-                                        href="service-details.html"
-                                    >
-
-                                        READ MORE
-                                    </a>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-
-                        {/* SwiperSlide 4 */}
-                        <SwiperSlide>
-                            <div className="service text-center bg-white shadow-lg rounded-lg overflow-hidden">
-                                <div className="thumb">
-                                    <a href="service-details.html">
-                                        <Image
-                                            src="/img1.jpg"
-                                            alt="Business Security"
-                                            className="w-full sm:h-[15rem] md:h-[20rem] lg:h-[25rem] object-center"
-                                            width={800}
-                                            height={200}
-                                        />
-                                    </a>
-                                </div>
-                                <div className="content p-6">
-                                    <h4 className="text-xl font-semibold mb-2">
-                                        <a href="service-details.html">Business Security</a>
-                                    </h4>
-                                    <p className="text-gray-600 mb-4">
-                                        Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid
-                                    </p>
-                                    <a
-                                        className="text-rose border border-none py-2 px-4 rounded inline-block hover:text-aqua hover:border-aqua transition-colors duration-300 ease-in-out"
-                                        href="service-details.html"
-                                    >
-
-                                        READ MORE
-                                    </a>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    </Swiper>
+                        <div className="swiper-button-prev !w-10 !h-10 -ml-8 !text-primary rounded-full hover:!text-secondary transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-ml-4 xs:!w-6 xs:!h-6 xs:-ml-2" />
+                        <div className="swiper-button-next !w-10 !h-10 -mr-8 !text-primary rounded-full hover:!text-secondary transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-mr-4 xs:!w-6 xs:!h-6 xs:-mr-2" />
+                    </div>
                 </div>
             </div>
 
@@ -578,13 +622,13 @@ export default function Home() {
                         <div className="w-full lg:w-1/2 px-4">
                             <div className="reapir-choose-inner py-5">
                                 <div className="section-title title-2">
-                                    <h2 className="text-3xl font-semibold">Why Choose Us</h2>
+                                    <h2 className="text-3xl font-semibold text-darkblue">Why Choose Us</h2>
                                     <div className="flex w-full h-1 mt-3">
                                         <div className="w-[10%] h-[50%] bg-black"></div>
                                         <div className="w-[10%] h-[50%] bg-red-500"></div>
                                     </div>
                                 </div>
-                                <div className="choose-resone-inner mt-5">
+                                <div className="choose-resone-inner mt-5 font-light">
                                     <p className="text-gray-600">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.
                                     </p>
@@ -593,7 +637,7 @@ export default function Home() {
                                     <div className="service flex items-start mt-8">
                                         <div className="icons w-12 h-12">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-16">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
                                             </svg>
 
                                         </div>
@@ -609,7 +653,7 @@ export default function Home() {
                                     <div className="service flex items-start mt-8">
                                         <div className="icons w-12 h-12">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-16">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
                                             </svg>
 
                                         </div>
@@ -625,8 +669,8 @@ export default function Home() {
                                     <div className="service flex items-start mt-8">
                                         <div className="icons w-12 h-12">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-16">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6Z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6Z" />
                                             </svg>
 
                                         </div>
@@ -643,7 +687,7 @@ export default function Home() {
 
                         {/* Right Side: Request a Quote */}
                         <div className="w-full lg:w-1/2 px-4 py-5">
-                            <div className="bg-mild contact_form_container repair-request-form bg-gray-100 px-6 rounded-lg shadow-md justify-center py-20">
+                            <div className="bg-mild text-darkblue  contact_form_container repair-request-form bg-gray-100 px-6 rounded-lg shadow-md justify-center py-20">
                                 <div className="ct-title-2 flex justify-center items-center py-30 mb-10">
                                     <span className="text-3xl font-semibold">Request a Quote</span>
                                 </div>
@@ -653,22 +697,22 @@ export default function Home() {
                                         <div className="grid gap-7">
                                             <input
                                                 type="text"
-                                                className="w-full rounded p-3 focus:outline-none focus:ring-2 focus:ring-rosesecondary"
+                                                className="w-full rounded p-3 focus:outline-none focus:ring-2 focus:ring-darkblue"
                                                 placeholder="Name*"
                                             />
                                             <input
                                                 type="text"
-                                                className="w-full rounded p-3 focus:outline-none focus:ring-2 focus:ring-rosesecondary mt-2"
+                                                className="w-full rounded p-3 focus:outline-none focus:ring-2 focus:ring-darkblue mt-2"
                                                 placeholder="Subject*"
                                             />
                                             <textarea
                                                 name="message"
-                                                className="w-full h-32 rounded p-3 border-gray-300 focus:outline-none focus:ring-2 focus:ring-rosesecondary mt-2 resize-none"
+                                                className="w-full h-32 rounded p-3 border-gray-300 focus:outline-none focus:ring-2 focus:ring-darkblue mt-2 resize-none"
                                                 placeholder="Your Message*"
                                             />
                                             <input
                                                 type="submit"
-                                                className="w-full bg-rosesecondary text-white mt-3 py-3 rounded hover:bg-rose transition"
+                                                className="w-full bg-rosesecondary text-white mt-3 py-3 rounded hover:bg-darkblue transition-all duration-300 ease-in-out transform"
                                                 value="Submit Inquiry"
                                             />
                                         </div>
@@ -684,32 +728,31 @@ export default function Home() {
 
 
             {/* NewsLetter Start */}
-            <div
-                className="section-newsletter section-ptb bg-cover bg-center py-12 mb-20 mx-3 flex items-center justify-center"
-                style={{ backgroundImage: `url('/img1.jpeg')`, height: '300px' }}
+            <div className="section-newsletter bg-cover bg-center py-12 mb-20 mx-3 flex items-center justify-center"
+                style={{ backgroundImage: `url('/img1.jpeg')`, minHeight: '300px' }}
             >
                 <div className="relative container mx-auto px-4 z-10 flex flex-col items-center justify-center h-full">
-                    <div className="flex flex-wrap justify-center items-center text-center md:text-left">
-                        <div className="w-full md:w-7/12 xl:w-1/2 mb-8 md:mb-0 px-4 md:px-0">
+                    <div className="flex flex-wrap justify-center items-center text-center">
+                        <div className="w-full lg:w-1/2 mb-8 lg:mb-0 px-4">
                             <div className="title text-white">
-                                <h4 className="text-lg font-semibold text-center md:text-left">Join Our Volunteer</h4>
-                                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2 text-center md:text-left">
+                                <h4 className="text-lg font-semibold text-center lg:text-left">Join Our Volunteer</h4>
+                                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2 text-center lg:text-left">
                                     Subscribe to Our Newsletter.
                                 </h2>
                             </div>
                         </div>
 
-                        <div className="w-full md:w-5/12 xl:w-1/2 px-4 md:px-0">
+                        <div className="w-full lg:w-1/2 px-4">
                             <form action="#" className="flex justify-center w-full">
                                 <div className="input-box flex flex-col sm:flex-row items-center w-full space-y-4 sm:space-y-0 sm:space-x-4">
                                     <input
                                         type="email"
                                         placeholder="Enter Your Email*"
-                                        className="py-3 px-4 italic placeholder:italic focus:outline-none border border-mild bg-transparent w-full sm:w-[350px] md:w-[400px]"
+                                        className="py-3 px-4 italic placeholder:italic focus:outline-none border text-mild border-mild bg-transparent w-full sm:w-[350px] lg:w-[400px]"
                                     />
                                     <button
                                         type="submit"
-                                        className="bg-rosesecondary hover:bg-rose text-black hover:text-mild py-3 px-6 transition-transform duration-300 ease-linear w-full sm:w-[180px]"
+                                        className="bg-rosesecondary hover:bg-rose text-black hover:text-mild py-3 px-6 transition-all duration-300 ease-in-out transform hover:scale-105 w-full sm:w-[180px]"
                                     >
                                         Subscribe
                                     </button>
@@ -720,27 +763,230 @@ export default function Home() {
                 </div>
             </div>
 
-
             {/* NewsLetter End */}
 
+            {/* Guard Start */}
+            <div className="section-team mt-10 pt-8 pb-10 bg-mild">
+                <div className="container mx-auto px-4 mt-5">
+                    <div className="flex justify-center mb-12">
+                        <div className="text-center">
+                            <div className="section-title">
+                                <h2 className="text-4xl font-bold mb-4 text-darkblue">Our Guards</h2>
+                                <div className="flex justify-center mb-4">
+                                    <div className="w-[4%] h-[2px] bg-black"></div>
+                                    <div className="w-[3%] h-[3px] bg-rosesecondary"></div>
+                                    <div className="w-[4%] h-[2px] bg-black"></div>
+                                </div>
+                                <p className="font-light text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do <br /> eiusmod tempor incididunt ut labore</p>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Start Team Area */}
+                    <div className="flex flex-wrap -mx-4">
+                        {/* Start Single Team */}
+                        <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8 ">
+                            <div className="bg-white shadow-lg rounded-lg overflow-hidden group hover:bg-darkblue hover:text-mild">
+                                <a href="#">
+                                    <div className="overflow-hidden">
+                                        <Image
+                                            src="/img1.jpg"
+                                            alt="Security Img"
+                                            className="w-full h-auto object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:translate-x-1 group-hover:rotate-3"
+                                            width={800}
+                                            height={600}
+                                        />
 
-            {/* Blog Start */}
+                                    </div>
+                                </a>
+                                <hr className='text-mild' />
+                                <div className="p-4 text-center">
+                                    <h4 className="text-xl font-bold"><a href="#">Cheryl Murray</a></h4>
+                                    <span className="text-gray-500">Director</span>
+                                    <hr className='text-mild mt-3' />
+                                    <ul className="flex justify-center mt-4 space-x-4">
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaFacebook /></a></li>
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaTwitter /></a></li>
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaPinterest /></a></li>
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaLinkedin /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* End Single Team */}
+                        {/* Start Single Team */}
+                        <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
+                            <div className="bg-white shadow-lg rounded-lg overflow-hidden group hover:bg-darkblue hover:text-mild">
+                                <a href="#">
+                                    <div className="overflow-hidden">
+                                        <Image
+                                            src="/img1.jpg"
+                                            alt="Security Img"
+                                            className="w-full h-auto object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:translate-x-1 group-hover:rotate-3"
+                                            width={800}
+                                            height={600}
+                                        />
+                                    </div>
+                                </a>
 
 
-            {/* Blog End */}
+                                <hr className='text-mild' />
+                                <div className="p-4 text-center">
+                                    <h4 className="text-xl font-bold"><a href="#">Doris Welch</a></h4>
+                                    <span className="text-gray-500">Director</span>
+                                    <hr className='text-mild mt-3' />
+                                    <ul className="flex justify-center mt-4 space-x-4">
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaFacebook /></a></li>
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaTwitter /></a></li>
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaPinterest /></a></li>
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaLinkedin /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {/* End Single Team */}
+                        {/* Start Single Team */}
+                        <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
+                            <div className="bg-white shadow-lg rounded-lg overflow-hidden group hover:bg-darkblue hover:text-mild">
+                                <a href="#">
+                                    <div className="overflow-hidden">
+                                        <Image
+                                            src="/img1.jpg"
+                                            alt="Security Img"
+                                            className="w-full h-auto object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:translate-x-1 group-hover:rotate-3"
+                                            width={800}
+                                            height={600}
+                                        />
+                                    </div>
+                                </a>
+                                <hr className='text-mild' />
+                                <div className="p-4 text-center">
+                                    <h4 className="text-xl font-bold"><a href="#">Virginia Moore</a></h4>
+                                    <span className="text-gray-500">Director</span>
+                                    <hr className='text-mild  mt-3' />
+                                    <ul className="flex justify-center mt-4 space-x-4">
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaFacebook /></a></li>
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaTwitter /></a></li>
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaPinterest /></a></li>
+                                        <li><a href="#" className="hover:text-rosesecondary"><FaLinkedin /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {/* End Single Team */}
+                    </div>
+                    {/* End Team Area */}
+                </div>
+            </div>
+
+            {/* Guard End */}
+
+
+            {/* Latest Blog Start */}
+            <div className="section-post-carousel section-pt section-pb-90 bg-white my-10 py-10">
+                <div className="container mx-auto px-4">
+                    <div className="mb-12">
+                        <div className="text-center">
+                            <h2 className="text-3xl font-bold mb-4 sm:text-2xl">Latest Blog</h2>
+                            <p className="text-gray-600 sm:text-sm">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do <br className="hidden sm:inline" /> eiusmod tempor incididunt ut labore et
+                                dolore magna aliqua.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="relative group">
+                        <Swiper
+                            modules={[Navigation, Pagination]}
+                            spaceBetween={30}
+                            slidesPerView={3}
+                            navigation={{
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            }}
+                            pagination={{ clickable: true }}
+                            loop={true}
+                            breakpoints={{
+                                320: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 10,
+                                },
+                                640: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 30,
+                                },
+                            }}
+                            className="w-full"
+                        >
+                            {blogPosts.map((post) => (
+                                <SwiperSlide key={post.id} className="h-auto">
+                                    <div className="bg-white rounded-lg overflow-hidden shadow-md mb-8 flex flex-col h-full">
+                                        <div className="relative w-full h-64 sm:h-40 md:h-56 lg:h-64 xl:h-72 overflow-hidden">
+                                            <Image
+                                                src={post.image}
+                                                alt={post.title}
+                                                width={500}
+                                                height={300}
+                                                objectFit="cover"
+                                                className="w-full h-full transition-transform duration-300 hover:scale-105"
+                                            />
+                                        </div>
+                                        <div className="flex-grow flex flex-col justify-between p-4">
+                                            <div>
+                                                <h4 className="text-xl font-semibold mb-2 sm:text-lg">
+                                                    <a href="#" className="text-gray-800 hover:text-blue-600 transition-colors">
+                                                        {post.title}
+                                                    </a>
+                                                </h4>
+                                                <ul className="flex text-sm text-gray-600 mb-4 space-x-4 sm:text-xs sm:space-x-2">
+                                                    <li className="flex items-center">
+                                                        <FaCalendar className="w-4 h-4 mr-1 sm:w-3 sm:h-3" />
+                                                        <span className="truncate">{post.date}</span>
+                                                    </li>
+                                                    <li className="flex items-center">
+                                                        <FaUser className="w-4 h-4 mr-1 sm:w-3 sm:h-3" />
+                                                        <span className="truncate">By: {post.author}</span>
+                                                    </li>
+                                                </ul>
+                                                <div className="h-20 overflow-hidden mb-4">
+                                                    <p className="text-gray-600 sm:text-sm">{post.excerpt}</p>
+                                                </div>
+                                            </div>
+                                            <div className="text-center mt-auto">
+                                                <a href="/" className="inline-block px-6 py-2 rounded-full text-white bg-rose hover:bg-darkblue transition-colors duration-300 sm:text-sm sm:px-4 sm:py-2">
+                                                    READ MORE
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+
+                        <div className="swiper-button-prev !w-10 !h-10 -ml-8 !text-rose rounded-full hover:!text-darkblue transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-ml-4" />
+                        <div className="swiper-button-next !w-10 !h-10 -mr-8 !text-rose rounded-full hover:!text-darkblue transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-mr-4" />
+                    </div>
+                </div>
+            </div>
+
+
+            {/* Latest Blog End */}
 
 
             {/* Footer Start */}
-
-            <footer className="bg-mildgray text-footertext p-5">
-                <div className="container mx-auto pr-1 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div className="flex flex-col px-2 md:px-4 lg:px-6">
+            <footer className="bg-mild text-footertext">
+                <div className="sm:px-4 lg:px-8 my-5 pt-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                        <div className="w-full flex flex-col px-4 mb-5">
                             <h5 className="text-lg font-bold mb-4 leading-7">ABOUT <span className="text-rosesecondary">US</span></h5>
                             <p className="text-sm leading-7">We offer a range of services designed to meet your needs, ensuring quality and professionalism at every step.</p>
                         </div>
 
-                        <div className="flex flex-col px-2  md:px-4 lg:px-6">
+                        <div className="w-full flex flex-col px-4 mb-5">
                             <h5 className="text-lg font-bold mb-4 leading-7">CONTACT <span className="text-rosesecondary">US</span></h5>
                             <p className="text-sm leading-7">Your address goes here, <br /> Street Crossroad123.</p>
                             <div className="text-sm mt-4 leading-7">
@@ -750,7 +996,7 @@ export default function Home() {
                             </div>
                         </div>
 
-                        <div className="flex flex-col px-2  md:px-4 lg:px-6">
+                        <div className="w-full flex flex-col px-4 mb-5">
                             <h5 className="text-lg font-bold mb-4 leading-7">QUICK <span className="text-rosesecondary leading-7">LINKS</span></h5>
                             <ul className="text-sm space-y-2 leading-7">
                                 <li><a href="#" className="hover:text-blue-500">Our Services</a></li>
@@ -761,47 +1007,25 @@ export default function Home() {
                             </ul>
                         </div>
 
-                        <div className="flex flex-col px-2  md:px-4 lg:px-6">
+                        <div className="w-full flex flex-col px-4 mb-5">
                             <h5 className="text-lg font-bold mb-4 leading-7">NEWSLETTER <span className="text-rosesecondary">NOW</span></h5>
                             <p className="text-sm mb-4 leading-7">Stay updated with the latest news and offers by subscribing to our newsletter.</p>
                             <div className="flex mb-4">
-                                <input type="email" className="w-full p-2 rounded-l-md" />
-                                <button className="bg-rose text-white px-4 rounded-r-md hover:bg-rosesecondary leading-7">
-                                    <FaPaperPlane />
-                                </button>
+                                <input type="email" className="w-full max-w-[200px] p-2 rounded-l-md border border-gray-300 focus:border-darkblue hover:border-darkblue" />
+                                <button className="bg-rose text-white px-4 rounded-r-md hover:bg-rosesecondary leading-7"><FaPaperPlane /></button>
                             </div>
-                            <div className="flex">
-                                <span className="border-solid p-2 hover:bg-gray-200 group">
-                                    <a href="#" className="text-gray group-hover:text-rosesecondary">
-                                        <FaFacebook />
-                                    </a>
-                                </span>
-                                <span className="border-solid p-2 hover:bg-gray-200 group">
-                                    <a href="#" className="text-gray group-hover:text-rosesecondary">
-                                        <FaTwitter />
-                                    </a>
-                                </span>
-                                <span className="border-solid p-2 hover:bg-gray-200 group">
-                                    <a href="#" className="text-gray group-hover:text-rosesecondary">
-                                        <FaGooglePlusG />
-                                    </a>
-                                </span>
-                                <span className="border-solid p-2 hover:bg-gray-200 group">
-                                    <a href="#" className="text-gray group-hover:text-rosesecondary">
-                                        <FaPinterest />
-                                    </a>
-                                </span>
-                                <span className="border-solid p-2 hover:bg-gray-200 group">
-                                    <a href="#" className="text-gray group-hover:text-rosesecondary">
-                                        <FaLinkedin />
-                                    </a>
-                                </span>
+                            <div className="flex space-x-2">
+                                <span className="border-solid p-2 hover:bg-gray-200 group"><a href="#" className="text-gray group-hover:text-rosesecondary"><FaFacebook /></a></span>
+                                <span className="border-solid p-2 hover:bg-gray-200 group"><a href="#" className="text-gray group-hover:text-rosesecondary"><FaTwitter /></a></span>
+                                <span className="border-solid p-2 hover:bg-gray-200 group"><a href="#" className="text-gray group-hover:text-rosesecondary"><FaGooglePlusG /></a></span>
+                                <span className="border-solid p-2 hover:bg-gray-200 group"><a href="#" className="text-gray group-hover:text-rosesecondary"><FaPinterest /></a></span>
+                                <span className="border-solid p-2 hover:bg-gray-200 group"><a href="#" className="text-gray group-hover:text-rosesecondary"><FaLinkedin /></a></span>
                             </div>
-
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-200 text-gray-700 py-4">
+
+                <div className="text-gray-700 py-4">
                     <div className="container mx-auto px-4">
                         <div className="flex justify-center">
                             <div className="text-center">
@@ -811,6 +1035,7 @@ export default function Home() {
                     </div>
                 </div>
             </footer>
+
             {/* Footer End */}
         </main >
     );

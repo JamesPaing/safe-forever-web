@@ -1,0 +1,67 @@
+
+            {/* Out Client Start */}
+            <div className="section-testimonial-carousel section-pt section-pb">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="section-title text-center">
+                                <h2>Our Clients Say</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
+                                    eiusmod tempor incididunt ut labore
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row pb-60">
+                        <Slider {...settings}>
+                            {posts.map((post, index) => (
+                                <div className="col-lg-6" key={index}>
+                                    <div className="testimonial-style-3 testimonial-grid-2 p-4">
+                                        <div className="testimonal flex items-center space-x-4">
+                                            <img
+                                                src={post.img}
+                                                alt="testimonal image"
+                                                className="w-16 h-16 rounded-full object-cover"
+                                            />
+                                            <div className="content">
+                                                <p className="text-gray-600">
+                                                    {post.description}
+                                                </p>
+                                                <div className="clint-info">
+                                                    <h4 className="font-bold text-lg">{post.title}</h4>
+                                                    <span className="text-sm text-gray-500">{post.author}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                            {/* Inserted Hardcoded Testimonial */}
+                            <div className="col-lg-6">
+                                <div className="testimonial-style-3 testimonial-grid-2 p-4">
+                                    <div className="testimonal flex items-center space-x-4">
+                                        <img
+                                            src="assets/images/testimoniail/02.png"
+                                            alt="testimonal image"
+                                            className="w-16 h-16 rounded-full object-cover"
+                                        />
+                                        <div className="content">
+                                            <p className="text-gray-600">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicill elit, sed
+                                                do eiusmo tempor incididunt ut labore etll dolore magna aliqua
+                                                Ut enim.
+                                            </p>
+                                            <div className="clint-info">
+                                                <h4 className="font-bold text-lg">Wandr Rose</h4>
+                                                <span className="text-sm text-gray-500">Customer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Slider>
+                    </div>
+                </div>
+            </div>
+            {/* Our Client End */}
