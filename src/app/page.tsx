@@ -35,27 +35,27 @@ export default function Home() {
     const services = [
         {
             id: 1,
-            title: 'Private/Home Security',
+            title: 'Home Security',
+            description: 'Protect your home with our advanced security systems.',
             image: '/img1.jpg',
-            description: 'Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid',
         },
         {
             id: 2,
-            title: 'Transport Security',
-            image: '/slider2.jpeg',
-            description: 'Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid',
+            title: 'Corporate Security',
+            description: 'Comprehensive security solutions for businesses of all sizes.',
+            image: '/img1.jpg',
         },
         {
             id: 3,
-            title: 'Maintain Security',
+            title: 'Event Security',
+            description: 'Ensure the safety of your events with our professional security staff.',
             image: '/img1.jpg',
-            description: 'Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid',
         },
         {
             id: 4,
-            title: 'Business Security',
+            title: 'Cybersecurity',
+            description: 'Protect your digital assets with our cutting-edge cybersecurity services.',
             image: '/img1.jpg',
-            description: 'Lorem ipsum dolor sit amet ectetur adipelitl sed do eiusmod tempor incidid',
         },
     ]
     const settings = {
@@ -128,6 +128,26 @@ export default function Home() {
         return null
     }
 
+    const guards = [
+        {
+            id: 1,
+            name: 'Cheryl Murray',
+            position: 'Director',
+            image: '/img1.jpg',
+        },
+        {
+            id: 2,
+            name: 'Doris Welch',
+            position: 'Director',
+            image: '/img1.jpg',
+        },
+        {
+            id: 3,
+            name: 'Virginia Moore',
+            position: 'Director',
+            image: '/img1.jpg',
+        },
+    ]
 
     return (
         <main className='scroll-smooth'>
@@ -240,7 +260,7 @@ export default function Home() {
                                     </svg>
                                 </button>
                             </div>
-                            <a href="/src/app/about-us/page.jsx" className="hover:text-rosesecondary py-2">ABOUT</a>
+                            <a href="/about-us/" className="hover:text-rosesecondary py-2">ABOUT</a>
                             <div className="relative">
                                 <button onClick={() => showSubMenu('serviceSubmenu')} className="flex items-center justify-between w-full hover:text-rosesecondary py-2">
                                     SERVICES
@@ -257,7 +277,7 @@ export default function Home() {
                                     </svg>
                                 </button>
                             </div>
-                            <a href="/src/app/contact-us/page.jsx" className="hover:text-rosesecondary py-2">CONTACT</a>
+                            <a href="/contact-us/" className="hover:text-rosesecondary py-2">CONTACT</a>
                         </nav>
                     )}
 
@@ -357,7 +377,7 @@ export default function Home() {
                                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-mild my-4 whitespace-nowrap">
                                     Security Service
                                 </h1>
-                                <p className="text-mild md:text-lg text-gray-200 mt-5 mb-10">
+                                <p className="text-mild md:text-lg mt-5 mb-10">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 </p>
                                 <a href="/"
@@ -369,15 +389,6 @@ export default function Home() {
    before:-z-10 after:-z-10 z-10">
                                     Get Appointment
                                 </a>
-
-
-
-
-
-
-
-
-
                             </div>
                         </div>
                     </div>
@@ -401,8 +412,8 @@ export default function Home() {
                                     </div>
                                     <h4 className="text-xl font-semibold text-darkblue">Webcam Security</h4>
                                 </div>
-                                <div className="flex-grow min-h-0 ml-10">
-                                    <p className="text-gray-700">Access complete visibility through your phone or device. We provide a complete range of security solutions, day and night vision to improve security & enhance capabilities.</p>
+                                <div className="flex-grow min-h-0 ml-12">
+                                    <p className="text-darkblue">Access complete visibility through your phone or device. We provide a complete range of security solutions, day and night vision to improve security & enhance capabilities.</p>
                                 </div>
                             </div>
                         </div>
@@ -418,8 +429,8 @@ export default function Home() {
                                     </div>
                                     <h4 className="text-xl font-semibold text-darkblue">Security Guard</h4>
                                 </div>
-                                <div className="flex-grow min-h-0  ml-10">
-                                    <p className="text-gray-700">Alarm services to suit the right environment. From wired to wireless systems, Remote Monitored and Integrating systems. We install all alarms to suit the needs of the location.</p>
+                                <div className="flex-grow min-h-0  ml-12">
+                                    <p className="text-darkblue">Alarm services to suit the right environment. From wired to wireless systems, Remote Monitored and Integrating systems. We install all alarms to suit the needs of the location.</p>
                                 </div>
                             </div>
                         </div>
@@ -435,8 +446,8 @@ export default function Home() {
                                     </div>
                                     <h4 className="text-xl font-semibold text-darkblue">Motivated Guards</h4>
                                 </div>
-                                <div className="flex-grow min-h-0  ml-10">
-                                    <p className="text-gray-700">Combining identification technology with security solutions to give you a high level of protection, whether your business has a single or multi-site entry points.</p>
+                                <div className="flex-grow min-h-0  ml-12">
+                                    <p className="text-darkblue">Combining identification technology with security solutions to give you a high level of protection, whether your business has a single or multi-site entry points.</p>
                                 </div>
                             </div>
                         </div>
@@ -452,8 +463,8 @@ export default function Home() {
                                     </div>
                                     <h4 className="text-xl font-semibold text-darkblue">24/7 Services</h4>
                                 </div>
-                                <div className="flex-grow min-h-0 ml-10">
-                                    <p className="text-gray-700">We offer & manage ongoing maintenance of your security systems. Keeping it working as it should be and keeping up with improvements that can be made.</p>
+                                <div className="flex-grow min-h-0 ml-12">
+                                    <p className="text-darkblue">We offer & manage ongoing maintenance of your security systems. Keeping it working as it should be and keeping up with improvements that can be made.</p>
                                 </div>
                             </div>
                         </div>
@@ -479,10 +490,10 @@ export default function Home() {
                                         <div className="w-[10%] h-[50%] bg-red-500"></div>
                                     </div>
                                     <br />
-                                    <p className="mb-4">
+                                    <p className="mb-4 font-light text-lg">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.
                                     </p>
-                                    <p className="mb-6">
+                                    <p className="mb-6 font-light text-lg">
                                         In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
                                     </p>
                                     <a href="/"
@@ -533,13 +544,13 @@ export default function Home() {
             <div className="section-service bg-mild py-10 mt-10">
                 <div className="container mx-auto px-4 my-10">
                     <div className="text-center mb-12 text-darkblue">
-                        <h2 className="text-4xl font-bold mb-4 sm:text-3xl xs:text-2xl">Our Services</h2>
+                        <h2 className="text-4xl font-bold mb-4 text-darkblue">Our Services</h2>
                         <div className="flex w-full h-0.5 justify-center items-center mb-4">
                             <div className="w-[4%] h-full bg-black"></div>
                             <div className="w-[3%] h-[4px] bg-rosesecondary"></div>
                             <div className="w-[4%] h-full bg-black"></div>
                         </div>
-                        <p className="text-gray-600 font-light px-4 sm:text-sm xs:text-xs">
+                        <p className="font-light text-darkblue">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do <br className="hidden sm:inline" />
                             eiusmod tempor incididunt ut labore
                         </p>
@@ -565,35 +576,35 @@ export default function Home() {
                         >
                             {services.map((service) => (
                                 <SwiperSlide key={service.id}>
-                                    <div className="bg-background rounded-lg overflow-hidden shadow-md mb-8 flex flex-col h-full">
-                                        <div className="w-full h-48 relative sm:h-40 xs:h-36">
+                                    <div className="bg-white rounded-lg overflow-hidden shadow-md mb-8 flex flex-col h-full">
+                                        <div className="w-full aspect-square relative">
                                             <Image
                                                 src={service.image}
                                                 alt={service.title}
-                                                layout='fill'
+                                                layout="fill"
                                                 objectFit="cover"
                                             />
                                         </div>
                                         <div className="flex-grow flex flex-col justify-between p-6 sm:p-4 xs:p-3">
-                                            <div>
-                                                <h4 className="text-xl font-semibold mb-2 sm:text-lg xs:text-base">
-                                                    <a href="/services" className="text-primary hover:text-primary/80 transition-colors">
+                                            <div className='flex flex-col items-center justify-center text-center'>
+                                                <h4 className="mb-2 sm:text-lg xs:text-base">
+                                                    <a href="/services" className="text-darkblue hover:text-rose transition-colors text-2xl font-semibold">
                                                         {service.title}
                                                     </a>
                                                 </h4>
-                                                <p className="text-muted-foreground mb-4 sm:text-sm xs:text-xs">{service.description}</p>
+                                                <p className="font-light text-sm mb-4 mx-auto xs:text-xs max-w-xs">{service.description}</p>
                                             </div>
                                             <div className="text-center mt-auto">
                                                 <a
                                                     href="/services"
-                                                    className="relative inline-flex items-center justify-center px-6 py-3 rounded-full text-white bg-primary text-base overflow-hidden transition-all duration-300 ease-in-out 
-                    before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
-                    hover:before:skew-x-5 hover:before:translate-x-full hover:before:scale-x-100 
-                    after:content-[''] after:absolute after:inset-0 after:bg-secondary after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
-                    hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
-                    before:-z-10 after:-z-10 z-10
-                    sm:text-sm sm:px-4 sm:py-2
-                    xs:text-xs xs:px-3 xs:py-1.5"
+                                                    className="relative inline-flex items-center justify-center px-6 py-3 rounded-full text-darkblue hover:text-rose bg-none text-base font-semibold overflow-hidden transition-all duration-300 ease-in-out 
+                        before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
+                        hover:before:skew-x-5 hover:before:translate-x-full hover:before:scale-x-100 
+                        after:content-[''] after:absolute after:inset-0 after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
+                        hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
+                        before:-z-10 after:-z-10 z-10
+                        sm:text-sm sm:px-4 sm:py-2
+                        xs:text-xs xs:px-3 xs:py-1.5"
                                                 >
                                                     READ MORE
                                                 </a>
@@ -604,79 +615,74 @@ export default function Home() {
                             ))}
                         </Swiper>
 
-                        <div className="swiper-button-prev !w-10 !h-10 -ml-8 !text-primary rounded-full hover:!text-secondary transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-ml-4 xs:!w-6 xs:!h-6 xs:-ml-2" />
-                        <div className="swiper-button-next !w-10 !h-10 -mr-8 !text-primary rounded-full hover:!text-secondary transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-mr-4 xs:!w-6 xs:!h-6 xs:-mr-2" />
+                        <div className="swiper-button-prev !w-10 !h-10 -ml-10 !text-rose rounded-full hover:!text-mild transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-ml-4 xs:!w-6 xs:!h-6 xs:-ml-1" />
+                        <div className="swiper-button-next !w-10 !h-10 -mr-10 !text-rose rounded-full hover:!text-mild transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-mr-4 xs:!w-6 xs:!h-6 xs:-mr-1" />
                     </div>
                 </div>
             </div>
-
             { /* Service End */}
 
 
             {/*Choose Us Start} */}
-
-            <div className="reapir-choose-us py-20 bg-white">
-                <div className="container mx-auto">
-                    <div className="flex flex-wrap items-center">
+            <div className="repair-choose-us py-10 sm:py-16 md:py-20 bg-white">
+                <div className="container mx-auto px-4">
+                    <div className="flex flex-wrap -mx-4">
                         {/* Left Side: Why Choose Us */}
-                        <div className="w-full lg:w-1/2 px-4">
-                            <div className="reapir-choose-inner py-5">
+                        <div className="w-full lg:w-1/2 px-4 mb-10 lg:mb-0">
+                            <div className="repair-choose-inner py-5">
                                 <div className="section-title title-2">
-                                    <h2 className="text-3xl font-semibold text-darkblue">Why Choose Us</h2>
+                                    <h2 className="text-2xl sm:text-3xl font-semibold text-darkblue">Why Choose Us</h2>
                                     <div className="flex w-full h-1 mt-3">
                                         <div className="w-[10%] h-[50%] bg-black"></div>
                                         <div className="w-[10%] h-[50%] bg-red-500"></div>
                                     </div>
                                 </div>
                                 <div className="choose-resone-inner mt-5 font-light">
-                                    <p className="text-gray-600">
+                                    <p className="text-darkblue text-sm sm:text-base">
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.
                                     </p>
 
                                     {/* Single Service */}
-                                    <div className="service flex items-start mt-8">
-                                        <div className="icons w-12 h-12">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-16">
+                                    <div className="service flex items-start mt-6 sm:mt-8">
+                                        <div className="icons w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-full h-full">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
                                             </svg>
-
                                         </div>
-                                        <div className="content mx-10">
-                                            <h4 className="text-xl font-semibold">Free Estimate</h4>
-                                            <p className="text-gray-600 mt-2">
+                                        <div className="content ml-4 sm:ml-6">
+                                            <h4 className="text-lg sm:text-xl font-semibold">Free Estimate</h4>
+                                            <p className="text-darkblue mt-2 text-sm sm:text-base">
                                                 Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut labor et dolore magna aliqua.
                                             </p>
                                         </div>
                                     </div>
 
                                     {/* Single Service */}
-                                    <div className="service flex items-start mt-8">
-                                        <div className="icons w-12 h-12">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-16">
+                                    <div className="service flex items-start mt-6 sm:mt-8">
+                                        <div className="icons w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-full h-full">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
                                             </svg>
-
                                         </div>
-                                        <div className="content mx-10">
-                                            <h4 className="text-xl font-semibold">24/7 Services</h4>
-                                            <p className="text-gray-600 mt-2">
+                                        <div className="content ml-4 sm:ml-6">
+                                            <h4 className="text-lg sm:text-xl font-semibold">24/7 Services</h4>
+                                            <p className="text-darkblue mt-2 text-sm sm:text-base">
                                                 Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut labor et dolore magna aliqua.
                                             </p>
                                         </div>
                                     </div>
 
                                     {/* Single Service */}
-                                    <div className="service flex items-start mt-8">
-                                        <div className="icons w-12 h-12">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-16">
+                                    <div className="service flex items-start mt-6 sm:mt-8">
+                                        <div className="icons w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-full h-full">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6Z" />
                                             </svg>
-
                                         </div>
-                                        <div className="content mx-10">
-                                            <h4 className="text-xl font-semibold">Flat Rate Fees</h4>
-                                            <p className="text-gray-600 mt-2">
+                                        <div className="content ml-4 sm:ml-6">
+                                            <h4 className="text-lg sm:text-xl font-semibold">Flat Rate Fees</h4>
+                                            <p className="text-darkblue mt-2 text-sm sm:text-base">
                                                 Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut labor et dolore magna aliqua.
                                             </p>
                                         </div>
@@ -686,33 +692,33 @@ export default function Home() {
                         </div>
 
                         {/* Right Side: Request a Quote */}
-                        <div className="w-full lg:w-1/2 px-4 py-5">
-                            <div className="bg-mild text-darkblue  contact_form_container repair-request-form bg-gray-100 px-6 rounded-lg shadow-md justify-center py-20">
-                                <div className="ct-title-2 flex justify-center items-center py-30 mb-10">
-                                    <span className="text-3xl font-semibold">Request a Quote</span>
+                        <div className="w-full lg:w-1/2 px-4">
+                            <div className="bg-mild text-darkblue contact_form_container repair-request-form bg-gray-100 px-4 sm:px-6 md:px-10 rounded-lg shadow-md py-8 sm:py-10 md:py-20 mt-10 lg:mt-0">
+                                <div className="ct-title-2 flex justify-center items-center mb-6 sm:mb-10">
+                                    <span className="text-xl sm:text-2xl md:text-3xl font-semibold">Request a Quote</span>
                                 </div>
 
                                 <div className="repair-service-form">
                                     <form action="#">
-                                        <div className="grid gap-7">
+                                        <div className="grid gap-4 sm:gap-5 md:gap-7">
                                             <input
                                                 type="text"
-                                                className="w-full rounded p-3 focus:outline-none focus:ring-2 focus:ring-darkblue"
+                                                className="w-full rounded p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-darkblue"
                                                 placeholder="Name*"
                                             />
                                             <input
                                                 type="text"
-                                                className="w-full rounded p-3 focus:outline-none focus:ring-2 focus:ring-darkblue mt-2"
+                                                className="w-full rounded p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-darkblue"
                                                 placeholder="Subject*"
                                             />
                                             <textarea
                                                 name="message"
-                                                className="w-full h-32 rounded p-3 border-gray-300 focus:outline-none focus:ring-2 focus:ring-darkblue mt-2 resize-none"
+                                                className="w-full h-24 sm:h-32 rounded p-2 sm:p-3 text-sm sm:text-base border-gray-300 focus:outline-none focus:ring-2 focus:ring-darkblue resize-none"
                                                 placeholder="Your Message*"
                                             />
                                             <input
                                                 type="submit"
-                                                className="w-full bg-rosesecondary text-white mt-3 py-3 rounded hover:bg-darkblue transition-all duration-300 ease-in-out transform"
+                                                className="w-full bg-rosesecondary text-white py-2 sm:py-3 rounded text-sm sm:text-base hover:bg-darkblue transition-all duration-300 ease-in-out transform"
                                                 value="Submit Inquiry"
                                             />
                                         </div>
@@ -772,108 +778,48 @@ export default function Home() {
                         <div className="text-center">
                             <div className="section-title">
                                 <h2 className="text-4xl font-bold mb-4 text-darkblue">Our Guards</h2>
-                                <div className="flex justify-center mb-4">
-                                    <div className="w-[4%] h-[2px] bg-black"></div>
-                                    <div className="w-[3%] h-[3px] bg-rosesecondary"></div>
-                                    <div className="w-[4%] h-[2px] bg-black"></div>
+                                <div className="flex w-full h-0.5 justify-center items-center mb-4">
+                                    <div className="w-[10%] h-full bg-black"></div>
+                                    <div className="w-[5%] h-[4px] bg-rosesecondary"></div>
+                                    <div className="w-[10%] h-full bg-black"></div>
                                 </div>
-                                <p className="font-light text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do <br /> eiusmod tempor incididunt ut labore</p>
+                                <p className="font-light text-darkblue">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do <br /> eiusmod tempor incididunt ut labore
+                                </p>
                             </div>
                         </div>
                     </div>
                     {/* Start Team Area */}
                     <div className="flex flex-wrap -mx-4">
-                        {/* Start Single Team */}
-                        <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8 ">
-                            <div className="bg-white shadow-lg rounded-lg overflow-hidden group hover:bg-darkblue hover:text-mild">
-                                <a href="#">
-                                    <div className="overflow-hidden">
-                                        <Image
-                                            src="/img1.jpg"
-                                            alt="Security Img"
-                                            className="w-full h-auto object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:translate-x-1 group-hover:rotate-3"
-                                            width={800}
-                                            height={600}
-                                        />
-
+                        {guards.map((guard) => (
+                            <div key={guard.id} className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
+                                <div className="bg-white shadow-lg rounded-lg overflow-hidden group hover:bg-darkblue hover:text-mild">
+                                    <a href="#">
+                                        <div className="overflow-hidden">
+                                            <Image
+                                                src={guard.image}
+                                                alt={`${guard.name} Image`}
+                                                className="w-full h-auto object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:translate-x-1 group-hover:rotate-3"
+                                                width={800}
+                                                height={600}
+                                            />
+                                        </div>
+                                    </a>
+                                    <hr className='text-mild' />
+                                    <div className="p-4 text-center">
+                                        <h4 className="text-xl font-bold"><a href="#">{guard.name}</a></h4>
+                                        <span className="">{guard.position}</span>
+                                        <hr className='text-mild mt-3' />
+                                        <ul className="flex justify-center mt-4 space-x-4">
+                                            <li><a href="#" className="hover:text-rosesecondary"><FaFacebook /></a></li>
+                                            <li><a href="#" className="hover:text-rosesecondary"><FaTwitter /></a></li>
+                                            <li><a href="#" className="hover:text-rosesecondary"><FaPinterest /></a></li>
+                                            <li><a href="#" className="hover:text-rosesecondary"><FaLinkedin /></a></li>
+                                        </ul>
                                     </div>
-                                </a>
-                                <hr className='text-mild' />
-                                <div className="p-4 text-center">
-                                    <h4 className="text-xl font-bold"><a href="#">Cheryl Murray</a></h4>
-                                    <span className="text-gray-500">Director</span>
-                                    <hr className='text-mild mt-3' />
-                                    <ul className="flex justify-center mt-4 space-x-4">
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaFacebook /></a></li>
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaTwitter /></a></li>
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaPinterest /></a></li>
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaLinkedin /></a></li>
-                                    </ul>
                                 </div>
                             </div>
-                        </div>
-
-                        {/* End Single Team */}
-                        {/* Start Single Team */}
-                        <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
-                            <div className="bg-white shadow-lg rounded-lg overflow-hidden group hover:bg-darkblue hover:text-mild">
-                                <a href="#">
-                                    <div className="overflow-hidden">
-                                        <Image
-                                            src="/img1.jpg"
-                                            alt="Security Img"
-                                            className="w-full h-auto object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:translate-x-1 group-hover:rotate-3"
-                                            width={800}
-                                            height={600}
-                                        />
-                                    </div>
-                                </a>
-
-
-                                <hr className='text-mild' />
-                                <div className="p-4 text-center">
-                                    <h4 className="text-xl font-bold"><a href="#">Doris Welch</a></h4>
-                                    <span className="text-gray-500">Director</span>
-                                    <hr className='text-mild mt-3' />
-                                    <ul className="flex justify-center mt-4 space-x-4">
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaFacebook /></a></li>
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaTwitter /></a></li>
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaPinterest /></a></li>
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaLinkedin /></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        {/* End Single Team */}
-                        {/* Start Single Team */}
-                        <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
-                            <div className="bg-white shadow-lg rounded-lg overflow-hidden group hover:bg-darkblue hover:text-mild">
-                                <a href="#">
-                                    <div className="overflow-hidden">
-                                        <Image
-                                            src="/img1.jpg"
-                                            alt="Security Img"
-                                            className="w-full h-auto object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:translate-x-1 group-hover:rotate-3"
-                                            width={800}
-                                            height={600}
-                                        />
-                                    </div>
-                                </a>
-                                <hr className='text-mild' />
-                                <div className="p-4 text-center">
-                                    <h4 className="text-xl font-bold"><a href="#">Virginia Moore</a></h4>
-                                    <span className="text-gray-500">Director</span>
-                                    <hr className='text-mild  mt-3' />
-                                    <ul className="flex justify-center mt-4 space-x-4">
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaFacebook /></a></li>
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaTwitter /></a></li>
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaPinterest /></a></li>
-                                        <li><a href="#" className="hover:text-rosesecondary"><FaLinkedin /></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        {/* End Single Team */}
+                        ))}
                     </div>
                     {/* End Team Area */}
                 </div>
@@ -885,14 +831,17 @@ export default function Home() {
             {/* Latest Blog Start */}
             <div className="section-post-carousel section-pt section-pb-90 bg-white my-10 py-10">
                 <div className="container mx-auto px-4">
-                    <div className="mb-12">
-                        <div className="text-center">
-                            <h2 className="text-3xl font-bold mb-4 sm:text-2xl">Latest Blog</h2>
-                            <p className="text-gray-600 sm:text-sm">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do <br className="hidden sm:inline" /> eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua.
-                            </p>
+                    <div className="text-center mb-12 text-darkblue">
+                        <h2 className="text-4xl font-bold mb-4 text-darkblue">Latest Blog</h2>
+                        <div className="flex w-full h-0.5 justify-center items-center mb-4">
+                            <div className="w-[4%] h-full bg-black"></div>
+                            <div className="w-[3%] h-[4px] bg-rosesecondary"></div>
+                            <div className="w-[4%] h-full bg-black"></div>
                         </div>
+                        <p className="font-light text-darkblue">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do <br className="hidden sm:inline" />
+                            eiusmod tempor incididunt ut labore
+                        </p>
                     </div>
 
                     <div className="relative group">
@@ -904,7 +853,7 @@ export default function Home() {
                                 nextEl: '.swiper-button-next',
                                 prevEl: '.swiper-button-prev',
                             }}
-                            pagination={{ clickable: true }}
+                            // pagination={{ clickable: true }}
                             loop={true}
                             breakpoints={{
                                 320: {
@@ -924,8 +873,8 @@ export default function Home() {
                         >
                             {blogPosts.map((post) => (
                                 <SwiperSlide key={post.id} className="h-auto">
-                                    <div className="bg-white rounded-lg overflow-hidden shadow-md mb-8 flex flex-col h-full">
-                                        <div className="relative w-full h-64 sm:h-40 md:h-56 lg:h-64 xl:h-72 overflow-hidden">
+                                    <div className="bg-white rounded-lg overflow-hidden shadow-md mb-4 sm:mb-6 md:mb-8 flex flex-col h-full">
+                                        <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 overflow-hidden">
                                             <Image
                                                 src={post.image}
                                                 alt={post.title}
@@ -935,29 +884,29 @@ export default function Home() {
                                                 className="w-full h-full transition-transform duration-300 hover:scale-105"
                                             />
                                         </div>
-                                        <div className="flex-grow flex flex-col justify-between p-4">
+                                        <div className="flex-grow flex flex-col justify-between p-3 sm:p-4 md:p-5">
                                             <div>
-                                                <h4 className="text-xl font-semibold mb-2 sm:text-lg">
-                                                    <a href="#" className="text-gray-800 hover:text-blue-600 transition-colors">
+                                                <h4 className="mb-2 sm:mb-3">
+                                                    <a href="#" className="text-lg sm:text-sm text-darkblue font-bold hover:text-rose transition-colors">
                                                         {post.title}
                                                     </a>
                                                 </h4>
-                                                <ul className="flex text-sm text-gray-600 mb-4 space-x-4 sm:text-xs sm:space-x-2">
-                                                    <li className="flex items-center">
-                                                        <FaCalendar className="w-4 h-4 mr-1 sm:w-3 sm:h-3" />
-                                                        <span className="truncate">{post.date}</span>
+                                                <ul className="flex flex-wrap text-xs sm:text-sm md:text-base text-darkblue mb-2 sm:mb-3 md:mb-4 space-x-2 sm:space-x-3 md:space-x-4">
+                                                    <li className="flex items-center mb-1 sm:mb-0">
+                                                        <FaCalendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 mr-1 sm:mr-1.5 md:mr-2" />
+                                                        <span className="truncate text-darkblue hover:text-rose text-xs sm:text-sm md:text-base font-light">{post.date}</span>
                                                     </li>
                                                     <li className="flex items-center">
-                                                        <FaUser className="w-4 h-4 mr-1 sm:w-3 sm:h-3" />
-                                                        <span className="truncate">By: {post.author}</span>
+                                                        <FaUser className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 mx-1 sm:mx-1.5 md:mx-2" />
+                                                        <span>By : </span><span className="truncate text-darkblue hover:text-rose text-xs sm:text-sm md:text-base font-light"> {post.author}</span>
                                                     </li>
                                                 </ul>
-                                                <div className="h-20 overflow-hidden mb-4">
-                                                    <p className="text-gray-600 sm:text-sm">{post.excerpt}</p>
+                                                <div className="h-20 sm:h-20 overflow-hidden mb-3 sm:mb-4">
+                                                    <p className="text-xs sm:text-sm text-darkblue font-semibold">{post.excerpt}</p>
                                                 </div>
                                             </div>
-                                            <div className="text-center mt-auto">
-                                                <a href="/" className="inline-block px-6 py-2 rounded-full text-white bg-rose hover:bg-darkblue transition-colors duration-300 sm:text-sm sm:px-4 sm:py-2">
+                                            <div className="text-center mt-2 sm:mt-3 md:mt-4">
+                                                <a href="/" className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 rounded-full text-white bg-rose hover:bg-darkblue transition-colors duration-300 text-xs sm:text-sm md:text-base float-start">
                                                     READ MORE
                                                 </a>
                                             </div>
@@ -1025,7 +974,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="text-gray-700 py-4">
+                <div className="text-gray py-4">
                     <div className="container mx-auto px-4">
                         <div className="flex justify-center">
                             <div className="text-center">
