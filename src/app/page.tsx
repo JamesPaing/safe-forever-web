@@ -58,30 +58,6 @@ export default function Home() {
             image: '/img1.jpg',
         },
     ]
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024, // Tablet
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 768, // Mobile
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-
-                },
-            },
-        ],
-    };
 
     const [mounted, setMounted] = useState(false)
 
@@ -615,8 +591,8 @@ export default function Home() {
                             ))}
                         </Swiper>
 
-                        <div className="swiper-button-prev !w-10 !h-10 -ml-10 !text-rose rounded-full hover:!text-mild transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-ml-4 xs:!w-6 xs:!h-6 xs:-ml-1" />
-                        <div className="swiper-button-next !w-10 !h-10 -mr-10 !text-rose rounded-full hover:!text-mild transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-mr-4 xs:!w-6 xs:!h-6 xs:-mr-1" />
+                        <div className="swiper-button-prev !w-10 !h-10 !text-rose hover:!text-darkblue duration-300 sm:!w-8 sm:!h-8 !left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="swiper-button-next !w-10 !h-10 !text-rose hover:!text-darkblue duration-300 sm:!w-8 sm:!h-8 !right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                 </div>
             </div>
@@ -729,7 +705,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-
             {/* Choose Us End*/}
 
 
@@ -768,7 +743,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-
             {/* NewsLetter End */}
 
             {/* Guard Start */}
@@ -824,7 +798,6 @@ export default function Home() {
                     {/* End Team Area */}
                 </div>
             </div>
-
             {/* Guard End */}
 
 
@@ -873,7 +846,7 @@ export default function Home() {
                         >
                             {blogPosts.map((post) => (
                                 <SwiperSlide key={post.id} className="h-auto">
-                                    <div className="bg-white rounded-lg overflow-hidden shadow-md mb-4 sm:mb-6 md:mb-8 flex flex-col h-full">
+                                    <div className="bg-white rounded-lg overflow-hidden shadow-md mb-4 sm:mb-6 flex flex-col h-full">
                                         <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 overflow-hidden">
                                             <Image
                                                 src={post.image}
@@ -887,7 +860,7 @@ export default function Home() {
                                         <div className="flex-grow flex flex-col justify-between p-3 sm:p-4 md:p-5">
                                             <div>
                                                 <h4 className="mb-2 sm:mb-3">
-                                                    <a href="#" className="text-lg sm:text-sm text-darkblue font-bold hover:text-rose transition-colors">
+                                                    <a href="#" className="text-lg sm:text-xl text-darkblue font-bold hover:text-rose transition-colors line-clamp-2">
                                                         {post.title}
                                                     </a>
                                                 </h4>
@@ -901,7 +874,7 @@ export default function Home() {
                                                         <span>By : </span><span className="truncate text-darkblue hover:text-rose text-xs sm:text-sm md:text-base font-light"> {post.author}</span>
                                                     </li>
                                                 </ul>
-                                                <div className="h-20 sm:h-20 overflow-hidden mb-3 sm:mb-4">
+                                                <div className="h-20 sm:h-20 mb-3 sm:mb-4">
                                                     <p className="text-xs sm:text-sm text-darkblue font-semibold">{post.excerpt}</p>
                                                 </div>
                                             </div>
@@ -915,14 +888,11 @@ export default function Home() {
                                 </SwiperSlide>
                             ))}
                         </Swiper>
-
-                        <div className="swiper-button-prev !w-10 !h-10 -ml-8 !text-rose rounded-full hover:!text-darkblue transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-ml-4" />
-                        <div className="swiper-button-next !w-10 !h-10 -mr-8 !text-rose rounded-full hover:!text-darkblue transition-colors duration-300 sm:!w-8 sm:!h-8 sm:-mr-4" />
+                        <div className="swiper-button-prev !w-10 !h-10 !text-rose hover:!text-darkblue duration-300 sm:!w-8 sm:!h-8 !left-0 !top-[35%] -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className="swiper-button-next !w-10 !h-10 !text-rose hover:!text-darkblue duration-300 sm:!w-8 sm:!h-8 !right-0 !top-[35%] -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                 </div>
             </div>
-
-
             {/* Latest Blog End */}
 
 
@@ -948,11 +918,11 @@ export default function Home() {
                         <div className="w-full flex flex-col px-4 mb-5">
                             <h5 className="text-lg font-bold mb-4 leading-7">QUICK <span className="text-rosesecondary leading-7">LINKS</span></h5>
                             <ul className="text-sm space-y-2 leading-7">
-                                <li><a href="#" className="hover:text-blue-500">Our Services</a></li>
-                                <li><a href="#" className="hover:text-blue-500">Our Company</a></li>
-                                <li><a href="#" className="hover:text-blue-500">Vision & Mission</a></li>
-                                <li><a href="#" className="hover:text-blue-500">Our Products</a></li>
-                                <li><a href="#" className="hover:text-blue-500">Our Team</a></li>
+                                <li><a href="#" className="hover:text-rose">Our Services</a></li>
+                                <li><a href="#" className="hover:text-rose">Our Company</a></li>
+                                <li><a href="#" className="hover:text-rose">Vision & Mission</a></li>
+                                <li><a href="#" className="hover:text-rose">Our Products</a></li>
+                                <li><a href="#" className="hover:text-rose">Our Team</a></li>
                             </ul>
                         </div>
 
@@ -974,7 +944,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="text-gray py-4">
+                <div className="text-gray bg-mildsecondary py-4">
                     <div className="container mx-auto px-4">
                         <div className="flex justify-center">
                             <div className="text-center">
@@ -984,7 +954,6 @@ export default function Home() {
                     </div>
                 </div>
             </footer>
-
             {/* Footer End */}
         </main >
     );
