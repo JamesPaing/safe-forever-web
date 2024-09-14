@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Breadcrumb from '../breadcrumb';
 import Image from 'next/image';
 import { FaFacebook, FaTwitter, FaPinterest, FaLinkedin, FaPaperPlane, FaGooglePlusG, FaCalendar, FaUser } from 'react-icons/fa';
@@ -327,16 +328,17 @@ const Page = () => {
                                         alt={post.title}
                                         layout="fill"
                                         objectFit="cover"
-                                        className="transition-transform duration-300 hover:scale-105"
+                                        className=""
                                     />
                                 </div>
                                 <div className="flex-grow flex flex-col justify-between p-3 sm:p-4">
                                     <div>
                                         <h4 className="mb-2 sm:mb-3">
-                                            <a href={`./${post.id}`} className="text-lg sm:text-2xl text-darkblue font-bold hover:text-rose transition-colors line-clamp-2">
+                                            <Link href={`/posts/blog-detail/${post.id}`} className="text-lg sm:text-2xl text-darkblue font-bold hover:text-rose transition-colors line-clamp-2">
                                                 {post.title}
-                                            </a>
+                                            </Link>
                                         </h4>
+
                                         <ul className="flex flex-wrap text-xs sm:text-sm md:text-base text-darkblue mb-2 sm:mb-3 md:mb-4 space-x-2 sm:space-x-3 md:space-x-4">
                                             <li className="flex items-center mb-1 sm:mb-0">
                                                 <FaCalendar className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 mr-1 sm:mr-1.5 md:mr-2" />
@@ -352,7 +354,7 @@ const Page = () => {
                                         </div>
                                     </div>
                                     <div className="text-center mt-2 sm:mt-3 md:mt-4">
-                                        <a href="/" className="inline-block px-5 py-3 rounded-full text-white bg-rose hover:bg-darkblue transition-colors duration-300 float-start">
+                                        <a href="/posts/blog-detail" className="inline-block px-5 py-3 rounded-full text-white bg-rose hover:bg-darkblue transition-colors duration-300 float-start">
                                             READ MORE
                                         </a>
                                     </div>

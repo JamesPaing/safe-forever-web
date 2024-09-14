@@ -297,7 +297,7 @@ const Page = () => {
                                     <li key={service.id} className="flex-shrink-0">
                                         <button
                                             onClick={() => setActiveTab(service.id)}
-                                            className={`service-link px-5 py-3 transition-colors w-full text-left ${activeTab === service.id
+                                            className={`service-link px-5 py-3 items-center transition-colors w-full ${activeTab === service.id
                                                 ? 'bg-gray text-white'
                                                 : 'bg-white text-gray hover:bg-gray hover:text-mild'
                                                 }`}

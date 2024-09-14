@@ -472,7 +472,7 @@ export default function Home() {
                                     <p className="mb-6 font-light text-lg">
                                         In reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
                                     </p>
-                                    <a href="/"
+                                    <a href="/about-us"
                                         className="w-[180px] relative inline-flex items-center justify-center mt-6 px-6 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
    before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
    hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
@@ -692,11 +692,13 @@ export default function Home() {
                                                 className="w-full h-24 sm:h-32 rounded p-2 sm:p-3 text-sm sm:text-base border-gray-300 focus:outline-none focus:ring-2 focus:ring-darkblue resize-none"
                                                 placeholder="Your Message*"
                                             />
-                                            <input
+                                            <button
                                                 type="submit"
                                                 className="w-full bg-rosesecondary text-white py-2 sm:py-3 rounded text-sm sm:text-base hover:bg-darkblue transition-all duration-300 ease-in-out transform"
-                                                value="Submit Inquiry"
-                                            />
+                                            >
+                                                Submit Inquiry
+                                            </button>
+
                                         </div>
                                     </form>
                                 </div>
@@ -854,13 +856,13 @@ export default function Home() {
                                                 width={500}
                                                 height={300}
                                                 objectFit="cover"
-                                                className="w-full h-full transition-transform duration-300 hover:scale-105"
+                                                className="w-full h-full"
                                             />
                                         </div>
                                         <div className="flex-grow flex flex-col justify-between p-3 sm:p-4 md:p-5">
                                             <div>
                                                 <h4 className="mb-2 sm:mb-3">
-                                                    <a href="#" className="text-lg sm:text-xl text-darkblue font-bold hover:text-rose transition-colors line-clamp-2">
+                                                    <a href="/posts" className="text-lg sm:text-xl text-darkblue font-bold hover:text-rose transition-colors line-clamp-2">
                                                         {post.title}
                                                     </a>
                                                 </h4>
@@ -879,7 +881,7 @@ export default function Home() {
                                                 </div>
                                             </div>
                                             <div className="text-center mt-2 sm:mt-3 md:mt-4">
-                                                <a href="/" className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 rounded-full text-white bg-rose hover:bg-darkblue transition-colors duration-300 text-xs sm:text-sm md:text-base float-start">
+                                                <a href="/posts" className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 rounded-full text-white bg-rose hover:bg-darkblue transition-colors duration-300 text-xs sm:text-sm md:text-base float-start">
                                                     READ MORE
                                                 </a>
                                             </div>

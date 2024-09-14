@@ -88,6 +88,9 @@ const Page = () => {
                 </div>
                 <h3 className="text-4xl font-bold mb-2">{currentCount}</h3>
                 <p className="text-lg">{label}</p>
+                <div className="flex justify-center mt-3">
+                    <hr className="w-[50px]" />
+                </div>
             </div>
 
         );

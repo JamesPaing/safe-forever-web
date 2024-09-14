@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/router';
 import Breadcrumb from '../../breadcrumb';
 import Image from 'next/image';
 import { FaFacebook, FaTwitter, FaPinterest, FaLinkedin, FaPaperPlane, FaGooglePlusG, FaYoutube, FaReply, FaSearch } from 'react-icons/fa';
@@ -355,7 +356,10 @@ const Page = () => {
                       />
                       <div className="flex flex-col justify-start">
                         <h3 className="font-semibold mt-2">
-                          <a href={`./${post.id}`} className="hover:text-rose text-darkblue transition-colors duration-200">
+                          {/* <a href={`./${post.id}`} className="hover:text-rose text-darkblue transition-colors duration-200">
+                            {post.title}
+                          </a> */}
+                          <a href='/posts' className="hover:text-rose text-darkblue transition-colors duration-200">
                             {post.title}
                           </a>
                         </h3>

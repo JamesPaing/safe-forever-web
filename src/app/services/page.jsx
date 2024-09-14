@@ -323,7 +323,7 @@ const Page = () => {
                                     <div className="flex-grow flex flex-col justify-between p-6 sm:p-4 xs:p-3">
                                         <div className='flex flex-col items-center justify-center text-center'>
                                             <h4 className="mb-4 sm:text-lg xs:text-base">
-                                                <a href="/services" className="text-darkblue hover:text-rose transition-colors text-2xl font-semibold">
+                                                <a href={`./${service.id}`} className="text-darkblue hover:text-rose transition-colors text-2xl font-semibold">
                                                     {service.title}
                                                 </a>
                                             </h4>
