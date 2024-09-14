@@ -2,7 +2,7 @@
 
 import Breadcrumb from '../breadcrumb';
 import Image from 'next/image';
-import { FaFacebook, FaTwitter, FaPinterest, FaLinkedin, FaPaperPlane, FaGooglePlusG, FaVideo } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaPinterest, FaLinkedin, FaPaperPlane, FaGooglePlusG, FaVideo, FaSmile, FaTrophy, FaProjectDiagram, FaCoffee } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -56,6 +56,42 @@ const Page = () => {
             image: '/img1.jpg',
         },
     ];
+
+    const counterData = [
+        { icon: <FaSmile className="text-3xl" />, count: 120, label: 'Happy Clients' },
+        { icon: <FaTrophy className="text-3xl" />, count: 90, label: 'Award Winning' },
+        { icon: <FaProjectDiagram className="text-3xl" />, count: 158, label: 'Project' },
+        { icon: <FaCoffee className="text-3xl" />, count: 249, label: 'Cups of Coffee' },
+    ];
+
+    function Counter({ icon, count, label }) {
+        const [currentCount, setCurrentCount] = useState(0);
+
+        useEffect(() => {
+            const timer = setInterval(() => {
+                setCurrentCount(prevCount => {
+                    if (prevCount < count) {
+                        return prevCount + 1;
+                    }
+                    clearInterval(timer);
+                    return prevCount;
+                });
+            }, 20);
+
+            return () => clearInterval(timer);
+        }, [count]);
+
+        return (
+            <div className="text-center mt-8 lg:mt-0 text-mild">
+                <div className="flex justify-center items-center mb-4">
+                    {icon}
+                </div>
+                <h3 className="text-4xl font-bold mb-2">{currentCount}</h3>
+                <p className="text-lg">{label}</p>
+            </div>
+
+        );
+    }
 
     return (
 
@@ -339,6 +375,29 @@ before:-z-10 after:-z-10 z-10">
             </div>
             {/* Agency End */}
 
+
+            {/* Counter Start */}
+            <div
+                className="py-24 bg-cover bg-center relative"
+                style={{ backgroundImage: "url('/slider2.jpeg')" }}
+            >
+                <div className="absolute inset-0 bg-black opacity-70"></div>
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="bg-white bg-opacity-10 p-8 rounded-lg">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {counterData.map((item, index) => (
+                                <Counter
+                                    key={index}
+                                    icon={item.icon}
+                                    count={item.count}
+                                    label={item.label}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Counter End */}
 
             {/* Guard Start */}
             <div className="section-team mt-10 pt-8 pb-10">

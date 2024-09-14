@@ -30,6 +30,18 @@ const Page = () => {
     setMenuState('main');
   };
 
+  const categories = [
+    { name: 'Private Security', count: 18 },
+    { name: 'Webcam Security', count: 16 },
+    { name: 'Motivated Guards', count: 6 },
+    { name: 'Self Guards', count: 11 },
+  ]
+  const recentPosts = [
+    { id: 1, title: 'Private Security', image: '/slider3.jpeg', time: '1 hour ago' },
+    { id: 2, title: 'Webcam Security', image: '/slider2.jpeg', time: '3 hours ago' },
+    { id: 3, title: 'Motivatd Security', image: '/slider1.jpeg', time: '1 day ago' },
+  ]
+
   if (!mounted) {
     return null;
   }
@@ -252,6 +264,115 @@ const Page = () => {
       {/* Hero Section End */}
 
       {/* Our Services Start */}
+
+      <div className="container mx-auto px-4 my-20">
+        <div className="flex flex-wrap -mx-4">
+
+          {/* left side start */}
+          <div className="w-full lg:w-3/4 px-4 order-2 lg:order-1">
+            <div className="mt-8">
+              <div className="rounded-lg overflow-hidden">
+                <Image
+                  src="/slider2.jpeg"
+                  alt="Blog post image"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="mt-6">
+                <div className="flex items-center text-sm text-gray-500 mb-2">
+                  <span>By: <a href="#" className="text-darkblue hover:text-rose">Mark Hari</a></span>
+                  <span className="mx-2"></span>
+                  <span>20-09-2024</span>
+                </div>
+                <h1 className="text-3xl font-bold mb-4">Webcam Security</h1>
+                <p className="mb-4">Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut lectus fermentum eleifend. Pellentesque faucibus sem ante, non malesuada odio varius nec. Suspendisse potenti.</p>
+                <blockquote className="border-l-4 border-rose pl-4 italic my-4">
+                  <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque.</p>
+                </blockquote>
+                <p className="mb-4">Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>
+                <p>Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.</p>
+              </div>
+            </div>
+          </div>
+          {/* left side end */}
+
+          {/* right side start */}
+          <div className="w-full lg:w-1/4 px-4 order-1 lg:order-2">
+            <div className="mt-8">
+
+              {/* search Start */}
+              <div className="mb-8">
+                <h2 className="text-xl font-semibold mb-4">Search</h2>
+                <form className="flex">
+                  <input type="text" placeholder="Enter Keywords..." className="flex-grow px-4 py-2 border focus:outline-none" />
+                  <button type="submit" className="px-4 py-2 bg-darkblue text-white hover:bg-rose  hover:text-darkblue focus:outline-none focus:ring-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+              {/* search End */}
+
+              {/* Categories Start */}
+              <div className="mb-8">
+                <h2 className="text-xl font-semibold mb-4">Categories</h2>
+                <ul className="space-y-2">
+                  {categories.map((category, index) => (
+                    <li key={index}>
+                      <div className="flex justify-between items-center py-2">
+                        <a
+                          href="/posts"
+                          className="text-gray hover:text-rose transition-colors duration-200"
+                        >
+                          {category.name}
+                        </a>
+                        <span className="text-gray hover:text-rose transition-colors duration-200">({category.count})</span>
+                      </div>
+                      {index < categories.length - 1 && (
+                        <hr className="border-gray my-2" />
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Categories End */}
+
+              {/* Recent Posts Start */}
+              <div>
+                <h2 className="text-xl font-semibold mb-4">Recent Posts</h2>
+                <div className="space-y-4">
+                  {recentPosts.map((post) => (
+                    <div key={post.id} className="flex items-start space-x-4">
+                      <Image
+                        src={post.image}
+                        alt={`Thumbnail for ${post.title}`}
+                        width={100}
+                        height={200}
+                        className="w-[130px] h-[130px]"
+                      />
+                      <div className="flex flex-col justify-start">
+                        <h3 className="font-semibold mt-2">
+                          <a href={`./${post.id}`} className="hover:text-rose text-darkblue transition-colors duration-200">
+                            {post.title}
+                          </a>
+                        </h3>
+                        <p className="text-sm text-gray mt-5">{post.time}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Recent Posts End */}
+            </div>
+          </div>
+          {/* right side end */}
+        </div>
+      </div>
+
+
 
       {/* Our Services End */}
 

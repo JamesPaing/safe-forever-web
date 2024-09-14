@@ -11,6 +11,7 @@ const Page = () => {
     const [sidebarVisible, setSidebarVisible] = useState(false);
     const [menuState, setMenuState] = useState('main');
     const [mounted, setMounted] = useState(false);
+    const [hoveredId, setHoveredId] = useState(null)
 
     useEffect(() => {
         setMounted(true);
@@ -332,7 +333,7 @@ const Page = () => {
                                 <div className="flex-grow flex flex-col justify-between p-3 sm:p-4">
                                     <div>
                                         <h4 className="mb-2 sm:mb-3">
-                                            <a href="#" className="text-lg sm:text-2xl text-darkblue font-bold hover:text-rose transition-colors line-clamp-2">
+                                            <a href={`./${post.id}`} className="text-lg sm:text-2xl text-darkblue font-bold hover:text-rose transition-colors line-clamp-2">
                                                 {post.title}
                                             </a>
                                         </h4>
