@@ -138,17 +138,17 @@ const Page = () => {
                             </li>
                             <li><a href="about-us" className="hover:text-rosesecondary p-3">ABOUT</a></li>
                             <li className="relative group">
-                                <a href="services" className="hover:text-rosesecondary p-3">SERVICES</a>
+                                <span className="hover:text-rosesecondary p-3">SERVICES</span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2"><a href="services" className="hover:text-rosesecondary">Service Page</a></li>
-                                    <li className="py-2"><a href="services" className="hover:text-rosesecondary">Service Detail Page</a></li>
+                                    <li className="py-2"><a href="services/service-detail" className="hover:text-rosesecondary">Service Detail Page</a></li>
                                 </ul>
                             </li>
                             <li className="relative group">
-                                <a href="posts" className="hover:text-rosesecondary p-3">BLOG</a>
+                                <span className="hover:text-rosesecondary p-3">BLOG</span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2"><a href="posts" className="hover:text-rosesecondary">Blog Page</a></li>
-                                    <li className="py-2"><a href="posts" className="hover:text-rosesecondary">Blog Detail Page</a></li>
+                                    <li className="py-2"><a href="posts/blog-detail" className="hover:text-rosesecondary">Blog Detail Page</a></li>
                                 </ul>
                             </li>
                             <li><a href="contact-us" className="hover:text-rosesecondary p-3">CONTACT</a></li>
@@ -227,8 +227,8 @@ const Page = () => {
                                 </svg>
                             </button>
                             <ul className="bg-mild text-black">
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Home One</a></li>
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Boxed Layout Page</a></li>
+                                <li className="py-2"><a href="/" className="hover:text-rosesecondary">Home One</a></li>
+                                <li className="py-2"><a href="/" className="hover:text-rosesecondary">Boxed Layout Page</a></li>
                             </ul>
                         </nav>
                     )}
@@ -242,8 +242,8 @@ const Page = () => {
                                 </svg>
                             </button>
                             <ul className="bg-mild text-black">
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Service Page</a></li>
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Service Detail Page</a></li>
+                                <li className="py-2"><a href="services" className="hover:text-rosesecondary">Service Page</a></li>
+                                <li className="py-2"><a href="services/service-detail" className="hover:text-rosesecondary">Service Detail Page</a></li>
                             </ul>
                         </nav>
                     )}
@@ -257,8 +257,8 @@ const Page = () => {
                                 </svg>
                             </button>
                             <ul className="bg-mild text-black">
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Blog Page</a></li>
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Blog Detail Page</a></li>
+                                <li className="py-2"><a href="posts" className="hover:text-rosesecondary">Blog Page</a></li>
+                                <li className="py-2"><a href="posts/blog-detail" className="hover:text-rosesecondary">Blog Detail Page</a></li>
                             </ul>
                         </nav>
                     )}

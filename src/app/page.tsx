@@ -177,28 +177,28 @@ export default function Home() {
                             </li>
                             <li><a href="about-us" className="hover:text-rosesecondary p-3">ABOUT</a></li>
                             <li className="relative group">
-                                <a href="services" className="hover:text-rosesecondary p-3">SERVICES</a>
+                                <span className="hover:text-rosesecondary p-3">SERVICES</span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2"><a href="services" className="hover:text-rosesecondary">Service Page</a></li>
-                                    <li className="py-2"><a href="services" className="hover:text-rosesecondary">Service Detail Page</a></li>
+                                    <li className="py-2"><a href="services/service-detail" className="hover:text-rosesecondary">Service Detail Page</a></li>
                                 </ul>
                             </li>
                             <li className="relative group">
-                                <a href="posts" className="hover:text-rosesecondary p-3">BLOG</a>
+                                <span className="hover:text-rosesecondary p-3">BLOG</span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2"><a href="posts" className="hover:text-rosesecondary">Blog Page</a></li>
-                                    <li className="py-2"><a href="posts" className="hover:text-rosesecondary">Blog Detail Page</a></li>
+                                    <li className="py-2"><a href="posts/blog-detail" className="hover:text-rosesecondary">Blog Detail Page</a></li>
                                 </ul>
                             </li>
                             <li><a href="contact-us" className="hover:text-rosesecondary p-3">CONTACT</a></li>
                             <li>
                                 <a href="/"
                                     className="relative inline-flex items-center justify-center px-10 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
-               before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
-               hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
-               after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
-               hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
-               before:-z-10 after:-z-10 z-10">
+       before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
+       hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
+       after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
+       hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
+       before:-z-10 after:-z-10 z-10">
                                     Buy Now
                                 </a>
                             </li>
@@ -266,8 +266,8 @@ export default function Home() {
                                 </svg>
                             </button>
                             <ul className="bg-mild text-black">
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Home One</a></li>
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Boxed Layout Page</a></li>
+                                <li className="py-2"><a href="/" className="hover:text-rosesecondary">Home One</a></li>
+                                <li className="py-2"><a href="/" className="hover:text-rosesecondary">Boxed Layout Page</a></li>
                             </ul>
                         </nav>
                     )}
@@ -281,8 +281,8 @@ export default function Home() {
                                 </svg>
                             </button>
                             <ul className="bg-mild text-black">
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Service Page</a></li>
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Service Detail Page</a></li>
+                                <li className="py-2"><a href="services" className="hover:text-rosesecondary">Service Page</a></li>
+                                <li className="py-2"><a href="services/service-detail" className="hover:text-rosesecondary">Service Detail Page</a></li>
                             </ul>
                         </nav>
                     )}
@@ -296,8 +296,8 @@ export default function Home() {
                                 </svg>
                             </button>
                             <ul className="bg-mild text-black">
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Blog Page</a></li>
-                                <li className="py-2"><a href="#" className="hover:text-rosesecondary">Blog Detail Page</a></li>
+                                <li className="py-2"><a href="posts" className="hover:text-rosesecondary">Blog Page</a></li>
+                                <li className="py-2"><a href="posts/blog-detail" className="hover:text-rosesecondary">Blog Detail Page</a></li>
                             </ul>
                         </nav>
                     )}
@@ -319,11 +319,11 @@ export default function Home() {
 
                                 <a href="/"
                                     className="w-[150px] mt-6 mx-16 relative inline-flex items-center justify-center px-10 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
-               before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
-               hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
-               after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
-               hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
-               before:-z-10 after:-z-10 z-10">
+       before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
+       hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
+       after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
+       hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
+       before:-z-10 after:-z-10 z-10">
                                     Buy Now
                                 </a>
                             </div>
