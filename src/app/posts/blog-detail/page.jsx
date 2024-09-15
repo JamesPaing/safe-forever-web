@@ -41,6 +41,7 @@ const Page = () => {
     { id: 1, title: 'Private Security', image: '/slider3.jpeg', time: '1 hour ago' },
     { id: 2, title: 'Webcam Security', image: '/slider2.jpeg', time: '3 hours ago' },
     { id: 3, title: 'Motivatd Security', image: '/slider1.jpeg', time: '1 day ago' },
+    { id: 4, title: 'Self Security', image: '/img1.jpg', time: '2 days ago' },
   ]
 
   if (!mounted) {
@@ -342,28 +343,26 @@ const Page = () => {
               {/* Categories End */}
 
               {/* Recent Posts Start */}
-              <div>
+              <div className="p-4">
                 <h2 className="text-xl font-semibold mb-4">Recent Posts</h2>
                 <div className="space-y-4">
                   {recentPosts.map((post) => (
                     <div key={post.id} className="flex items-start space-x-4">
-                      <Image
-                        src={post.image}
-                        alt={`Thumbnail for ${post.title}`}
-                        width={100}
-                        height={200}
-                        className="w-[130px] h-[130px]"
-                      />
+                      <div className="relative w-32 h-32 flex-shrink-0">
+                        <Image
+                          src={post.image}
+                          alt={`Thumbnail for ${post.title}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                       <div className="flex flex-col justify-start">
-                        <h3 className="font-semibold mt-2">
-                          {/* <a href={`./${post.id}`} className="hover:text-rose text-darkblue transition-colors duration-200">
-                            {post.title}
-                          </a> */}
-                          <a href='/posts' className="hover:text-rose text-darkblue transition-colors duration-200">
+                        <h3 className="font-semibold">
+                          <a href='/posts' className="hover:text-rose-500 text-blue-900 transition-colors duration-200">
                             {post.title}
                           </a>
                         </h3>
-                        <p className="text-sm text-gray mt-5">{post.time}</p>
+                        <p className="text-sm text-gray-500 mt-2">{post.time}</p>
                       </div>
                     </div>
                   ))}
