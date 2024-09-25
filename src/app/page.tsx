@@ -1,5 +1,5 @@
 'use client';
-
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { FaFacebook, FaTwitter, FaPinterest, FaLinkedin, FaPaperPlane, FaGooglePlusG, FaVideo, FaArrowLeft, FaCalendar, FaArrowRight, FaUser } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
@@ -10,7 +10,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 SwiperCore.use([Navigation]);
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -31,6 +30,8 @@ export default function Home() {
     const goBackToMainMenu = () => {
         setMenuState('main');
     };
+
+    const pathname = usePathname();
 
     const services = [
         {
@@ -69,7 +70,7 @@ export default function Home() {
         {
             id: 1,
             title: 'Webcam Security sit amet.',
-            image: '/img1.jpg',
+            image: '/slider1.jpeg',
             date: 'Sep 14, 2018',
             author: 'Admin',
             excerpt: 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eius tempor incididu ut labore et dolore.Discover the latest trends for your business growth.',
@@ -77,7 +78,7 @@ export default function Home() {
         {
             id: 2,
             title: 'Digital Marketing Strategies',
-            image: '/img1.jpg',
+            image: '/slider2.jpeg',
             date: 'Oct 22, 2018',
             author: 'Jane Doe',
             excerpt: 'Discover the latest trends in digital marketing and how to implement them for your business growth.',
@@ -127,6 +128,7 @@ export default function Home() {
 
     return (
         <main className='scroll-smooth'>
+
             {/* Header Start */}
 
             <header>
@@ -169,28 +171,28 @@ export default function Home() {
                     <nav className="hidden lg:flex flex-col lg:flex-row lg:w-3/4 lg:justify-end items-center px-5 text-darkblue font-bold">
                         <ul className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-2 px-5 py-5 items-center">
                             <li className="relative group">
-                                <a href="/" className="hover:text-rosesecondary border-spacing-1 p-3">HOME</a>
+                                <a href="/" className={`hover:text-rosesecondary border-spacing-1 p-3 ${pathname === '/' ? 'text-rosesecondary' : ''}`}>HOME</a>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] h-auto hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2"><a href="/" className="hover:text-rosesecondary">Home One</a></li>
                                     <li className="py-2"><a href="/" className="hover:text-rosesecondary">Boxed Layout Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="about-us" className="hover:text-rosesecondary p-3">ABOUT</a></li>
+                            <li><a href="about-us" className={`hover:text-rosesecondary p-3 ${pathname === '/about-us' ? 'text-rosesecondary' : ''}`}>ABOUT</a></li>
                             <li className="relative group">
-                                <span className="hover:text-rosesecondary p-3">SERVICES</span>
+                                <span className={`hover:text-rosesecondary p-3 ${pathname.startsWith('/services') ? 'text-rosesecondary' : ''}`}>SERVICES</span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2"><a href="services" className="hover:text-rosesecondary">Service Page</a></li>
                                     <li className="py-2"><a href="services/service-detail" className="hover:text-rosesecondary">Service Detail Page</a></li>
                                 </ul>
                             </li>
                             <li className="relative group">
-                                <span className="hover:text-rosesecondary p-3">BLOG</span>
+                                <span className={`hover:text-rosesecondary p-3 ${pathname.startsWith('/posts') ? 'text-rosesecondary' : ''}`}>BLOG</span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2"><a href="posts" className="hover:text-rosesecondary">Blog Page</a></li>
                                     <li className="py-2"><a href="posts/blog-detail" className="hover:text-rosesecondary">Blog Detail Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact-us" className="hover:text-rosesecondary p-3">CONTACT</a></li>
+                            <li><a href="contact-us" className={`hover:text-rosesecondary p-3 ${pathname === '/contact-us' ? 'text-rosesecondary' : ''}`}>CONTACT</a></li>
                             <li>
                                 <a href="/"
                                     className="relative inline-flex items-center justify-center px-10 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
@@ -199,7 +201,7 @@ export default function Home() {
        after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
        hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
        before:-z-10 after:-z-10 z-10">
-                                    Buy Now
+                                    Get Quotation
                                 </a>
                             </li>
                         </ul>
@@ -229,16 +231,16 @@ export default function Home() {
                     {menuState === 'main' && (
                         <nav className="flex flex-col space-y-4 p-5">
                             <div className="relative">
-                                <button onClick={() => showSubMenu('homeSubmenu')} className="flex items-center justify-between w-full hover:text-rosesecondary py-2">
+                                <button onClick={() => showSubMenu('homeSubmenu')} className={`flex items-center justify-between w-full hover:text-rosesecondary py-2 ${pathname === '/' ? 'text-rosesecondary' : ''}`}>
                                     HOME
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3" />
                                     </svg>
                                 </button>
                             </div>
-                            <a href="/about-us/" className="hover:text-rosesecondary py-2">ABOUT</a>
+                            <a href="/about-us/" className={`hover:text-rosesecondary py-2 ${pathname === '/about-us' ? 'text-rosesecondary' : ''}`}>ABOUT</a>
                             <div className="relative">
-                                <button onClick={() => showSubMenu('serviceSubmenu')} className="flex items-center justify-between w-full hover:text-rosesecondary py-2">
+                                <button onClick={() => showSubMenu('serviceSubmenu')} className={`flex items-center justify-between w-full hover:text-rosesecondary py-2 ${pathname.startsWith('/services') ? 'text-rosesecondary' : ''}`}>
                                     SERVICES
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3" />
@@ -246,20 +248,20 @@ export default function Home() {
                                 </button>
                             </div>
                             <div className="relative">
-                                <button onClick={() => showSubMenu('blogSubmenu')} className="flex items-center justify-between w-full hover:text-rosesecondary py-2">
+                                <button onClick={() => showSubMenu('blogSubmenu')} className={`flex items-center justify-between w-full hover:text-rosesecondary py-2 ${pathname.startsWith('/posts') ? 'text-rosesecondary' : ''}`}>
                                     BLOG
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0-3.75 3.75M21 12H3" />
                                     </svg>
                                 </button>
                             </div>
-                            <a href="/contact-us/" className="hover:text-rosesecondary py-2">CONTACT</a>
+                            <a href="/contact-us/" className={`hover:text-rosesecondary py-2 ${pathname === '/contact-us' ? 'text-rosesecondary' : ''}`}>CONTACT</a>
                         </nav>
                     )}
 
                     {menuState === 'homeSubmenu' && (
                         <nav className="bg-mild flex flex-col space-y-4 p-5">
-                            <button onClick={goBackToMainMenu} className="flex items-center justify-between w-full hover:text-rosesecondary py-2">
+                            <button onClick={goBackToMainMenu} className={`flex items-center justify-between w-full hover:text-rosesecondary py-2 ${pathname === '/' ? 'text-rosesecondary' : ''}`}>
                                 HOME
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0-3.75-3.75M21 12H3" />
@@ -274,7 +276,7 @@ export default function Home() {
 
                     {menuState === 'serviceSubmenu' && (
                         <nav className="bg-mild flex flex-col space-y-4 p-5">
-                            <button onClick={goBackToMainMenu} className="flex items-center justify-between w-full hover:text-rosesecondary py-2">
+                            <button onClick={goBackToMainMenu} className={`flex items-center justify-between w-full hover:text-rosesecondary py-2 ${pathname.startsWith('/services') ? 'text-rosesecondary' : ''}`}>
                                 SERVICES
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0-3.75-3.75M21 12H3" />
@@ -289,7 +291,7 @@ export default function Home() {
 
                     {menuState === 'blogSubmenu' && (
                         <nav className="bg-mild flex flex-col space-y-4 p-5">
-                            <button onClick={goBackToMainMenu} className="flex items-center justify-between w-full hover:text-rosesecondary py-2">
+                            <button onClick={goBackToMainMenu} className={`flex items-center justify-between w-full hover:text-rosesecondary py-2 ${pathname.startsWith('/posts') ? 'text-rosesecondary' : ''}`}>
                                 BLOG
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0-3.75-3.75M21 12H3" />
@@ -318,13 +320,13 @@ export default function Home() {
                                 </div>
 
                                 <a href="/"
-                                    className="w-[150px] mt-6 mx-16 relative inline-flex items-center justify-center px-10 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
+                                    className="w-[190px] mt-6 mx-16 relative inline-flex items-center justify-center px-10 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
        before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
        hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
        after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
        hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
        before:-z-10 after:-z-10 z-10">
-                                    Buy Now
+                                    Get Quotation
                                 </a>
                             </div>
                         </div>
@@ -853,10 +855,10 @@ export default function Home() {
                                             <Image
                                                 src={post.image}
                                                 alt={post.title}
-                                                width={500}
-                                                height={300}
-                                                objectFit="cover"
-                                                className="w-full h-full"
+                                                width={800}
+                                                height={400}
+                                                objectFit="contain"
+                                                className="w-full h-full object-scale-down"
                                             />
                                         </div>
                                         <div className="flex-grow flex flex-col justify-between p-3 sm:p-4 md:p-5">
