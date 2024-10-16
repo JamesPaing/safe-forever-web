@@ -130,6 +130,23 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                             <FaLinkedin />
                                         </a>
                                     </li>
+                                    <li className="pl-10">
+                                        <a
+                                            href="/"
+                                            className="hover:text-rosesecondary"
+                                        >
+                                            {/* @ts-ignore */}
+                                            <img src="/eng.png" width={17} />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="/mm"
+                                            className="hover:text-rosesecondary"
+                                        >
+                                            <img src="/mm.png" width={17} />
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

@@ -41,65 +41,63 @@ const Page = () => {
     const services = [
         {
             id: 1,
-            title: 'အိမ် Security',
-            description:
-                'လူကြီးမင်းတို့၏အိမ်၏ လုံခြုံရေးအတွက် ၂၄ နာရီစောင့်ကြည့်ပေးခြင်း။',
+            title: 'Home Security',
+            description: '24/7 Monitoring for the Security of Your Home.',
             image: '/sf3.jpg',
         },
         {
             id: 2,
-            title: 'အဆောက်အဦး Security',
+            title: 'Building Security',
             description:
                 'Comprehensive security solutions for businesses of all sizes.',
             image: '/sf10.jpg',
         },
         {
             id: 3,
-            title: 'ရုံးခန်း Security',
+            title: 'Office Security',
             description:
-                'ရုံးဝင်ပစ္စည်းများနှင့် ဝန်ထမ်းများ၏ လုံခြုံရေးအတွက်စောင့်ကြည့်ပေးခြင်း။',
+                'Monitoring for the Security of Office Assets and Staff.',
             image: '/sf1.jpg',
         },
         {
             id: 4,
-            title: 'ဂိုဒေါင် Security',
+            title: 'Warehouse Security',
             description:
-                'အထည်အလက်များသိမ်းဆည်းထားသော ဂိုဒေါင်ကို လုံခြုံစွာစောင့်ကြည့်ကာ တရားမဝင်ဝင်ရောက်မှုမှ ကာကွယ်ပေးခြင်း။',
+                'Safely monitoring the warehouse where goods are stored to protect against unauthorized access.',
             image: '/sf11.jpg',
         },
         {
             id: 5,
-            title: 'ဟိုတယ် Security',
+            title: 'Hotel Security',
             description:
-                'ဧည်သည်များနှင့် ဝန်ထမ်းများ၏ လုံခြုံရေးအတွက် ဟိုတယ်ပတ်ဝန်းကျင်ကို စောင့်ကြည့်ကာကွယ်ပေးခြင်း။',
+                'Monitoring the hotel environment to ensure the security of guests and staff.',
             image: '/sf5.jpg',
         },
         {
             id: 6,
-            title: 'စားသောက်ဆိုင် Security',
+            title: 'Restaurant Security',
             description:
-                'စားသောက်ဆိုင်တွင် လုံခြုံစိတ်ချရသော ပတ်ဝန်းကျင်တည်ဆောက်ပေးခြင်း။',
+                'Creating a secure and trustworthy environment in the restaurant',
             image: '/sf6.jpg',
         },
         {
             id: 7,
-            title: 'အရောင်းဆိုင် Security',
-            description:
-                'အရောင်းဆိုင်တွင် လုယက်မှုမဖြစ်အောင် စောင့်ကြည့်ကာ ကာကွယ်ပေးခြင်း။',
+            title: 'Store Security',
+            description: 'Monitoring to prevent theft in the retail store',
             image: '/sf8.jpg',
         },
         {
             id: 8,
-            title: 'စက်ရုံ Security',
+            title: 'Factory Security',
             description:
-                'စက်ရုံတွင်ရှိသည့် ပစ္စည်းကိရိယာများနှင့် အလုပ်သမားများ၏ လုံခြုံရေးအတွက် စောင့်ကြည့်ကာကွယ်ပေးခြင်း။',
+                'Monitoring to ensure the security of equipment and workers in the factory',
             image: '/sf7.jpg',
         },
         {
             id: 9,
-            title: 'အလုပ်ရုံ Security',
+            title: 'Workshop Security',
             description:
-                'အလုပ်ရုံတွင်ရှိသည့် ကိရိယာများနှင့် အလုပ်သမားများ၏ လုံခြုံရေးအတွက် စောင့်ကြည့်ကာကွယ်ပေးခြင်း။',
+                'Monitoring to ensure the security of tools and workers in the workshop',
             image: '/sf1.jpg',
         },
     ];
@@ -152,6 +150,23 @@ const Page = () => {
                                             className="hover:text-rosesecondary"
                                         >
                                             <FaLinkedin />
+                                        </a>
+                                    </li>
+                                    <li className="pl-10">
+                                        <a
+                                            href="/"
+                                            className="hover:text-rosesecondary"
+                                        >
+                                            {/* @ts-ignore */}
+                                            <img src="/eng.png" width={17} />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="/mm"
+                                            className="hover:text-rosesecondary"
+                                        >
+                                            <img src="/mm.png" width={17} />
                                         </a>
                                     </li>
                                 </ul>
@@ -682,18 +697,13 @@ const Page = () => {
                             <div className="w-[4%] h-full bg-black"></div>
                         </div>
                         <p className="font-light text-darkblue">
-                            ယုံကြည်စွာအပ်နှံလာသော လူကြီးမင်းတို့၏ အိမ်/အဆောက်အဦ/{' '}
-                            <br className="hidden sm:inline" />
-                            ရုံးခန်း/ ဂိုဒေါင်/ ဟိုတယ်/
-                            စားသောက်ဆိုင်/အရောင်းဆိုင်/{' '}
-                            <br className="hidden sm:inline" /> စက်ရုံ/ အလုပ်ရုံ
-                            အစရှိသည်တို့၏ လုံခြုံရေးအတွက် ကုမ္ပဏီ၏
-                            ဆောင်ပုဒ်နှင့်အညီ{' '}
-                            <br className="hidden sm:inline" /> ၂၄ နာရီ နေ့/ည
-                            အထူးကြိုးစားဆောင်ရွက်လျက်ရှိပါတယ်
-                            {/* Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit sed do <br className="hidden sm:inline" />
-                            eiusmod tempor incididunt ut labore */}
+                            In accordance with the company's motto, we are
+                            working diligently 24 hours a day,{' '}
+                            <br className="hidden sm:inline" /> both day and
+                            night, to ensure the security of your entrusted
+                            home, building, office, warehouse,{' '}
+                            <br className="hidden sm:inline" /> hotel,
+                            restaurant, retail store, factory, and workplace
                         </p>
                     </div>
 

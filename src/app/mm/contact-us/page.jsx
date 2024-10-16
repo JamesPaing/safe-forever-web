@@ -47,7 +47,7 @@ const Page = () => {
                     <div className="container mx-auto px-[55px]">
                         <div className="flex justify-between items-center">
                             <div className="lefttopbar">
-                                <p>Have any questions? +959450703535</p>{' '}
+                                <p>မေးစရာရှိပါသလား? +959450703535</p>{' '}
                             </div>
                             <div className="righttopbar">
                                 <ul className="flex space-x-7">
@@ -127,14 +127,14 @@ const Page = () => {
                         <ul className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-2 px-5 py-5 items-center">
                             <li className="relative group">
                                 <a
-                                    href="/"
+                                    href="/mm"
                                     className={`hover:text-rosesecondary border-spacing-1 p-3 ${
-                                        pathname === '/'
+                                        pathname === '/mm'
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    HOME
+                                    မူလစာမျက်နှာ
                                 </a>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] h-auto hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2">
@@ -157,30 +157,30 @@ const Page = () => {
                             </li>
                             <li>
                                 <a
-                                    href="about-us"
+                                    href="/mm/about-us"
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname === '/about-us'
+                                        pathname === '/mm/about-us'
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    ABOUT
+                                    အကြောင်းအရာ
                                 </a>
                             </li>
                             <li className="relative group">
                                 <span
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname.startsWith('/services')
+                                        pathname.startsWith('/mm/services')
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    SERVICES
+                                    ၀န်ဆောင်မှုများ
                                 </span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2">
                                         <a
-                                            href="services"
+                                            href="/mm/services"
                                             className="hover:text-rosesecondary"
                                         >
                                             Service Page
@@ -188,7 +188,7 @@ const Page = () => {
                                     </li>
                                     <li className="py-2">
                                         <a
-                                            href="services/service-detail"
+                                            href="/mm/services/service-detail"
                                             className="hover:text-rosesecondary"
                                         >
                                             Service Detail Page
@@ -199,17 +199,17 @@ const Page = () => {
                             <li className="relative group">
                                 <span
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname.startsWith('/posts')
+                                        pathname.startsWith('/mm/posts')
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    BLOG
+                                    ဘလော.
                                 </span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2">
                                         <a
-                                            href="posts"
+                                            href="/mm/posts"
                                             className="hover:text-rosesecondary"
                                         >
                                             Blog Page
@@ -217,7 +217,7 @@ const Page = () => {
                                     </li>
                                     <li className="py-2">
                                         <a
-                                            href="posts/blog-detail"
+                                            href="/mm/posts/blog-detail"
                                             className="hover:text-rosesecondary"
                                         >
                                             Blog Detail Page
@@ -227,27 +227,27 @@ const Page = () => {
                             </li>
                             <li>
                                 <a
-                                    href="contact-us"
+                                    href="/mm/contact-us"
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname === '/contact-us'
+                                        pathname === '/mm/contact-us'
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    CONTACT
+                                    ဆက်သွယ်ရန်
                                 </a>
                             </li>
                             <li>
                                 <a
                                     href="/"
                                     className="relative inline-flex items-center justify-center px-10 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
-       before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
-       hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
-       after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
-       hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
-       before:-z-10 after:-z-10 z-10"
+   before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
+   hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
+   after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
+   hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
+   before:-z-10 after:-z-10 z-10"
                                 >
-                                    Get Quotation
+                                    Quotation ယူရန်
                                 </a>
                             </li>
                         </ul>
@@ -641,7 +641,7 @@ const Page = () => {
                             <div className="bg-white p-8 rounded-lg shadow-lg">
                                 <div className="mb-6">
                                     <h3 className="text-4xl font-semibold text-darkblue">
-                                        Get In Touch
+                                        ဆက်သွယ်ပါ
                                     </h3>
                                     <div className="flex w-full h-0.5 justify-start items-start my-4">
                                         <div className="w-[25%] h-full bg-darkblue"></div>
@@ -654,7 +654,7 @@ const Page = () => {
                                             <input
                                                 name="name"
                                                 type="text"
-                                                placeholder="Name*"
+                                                placeholder="နာမည်*"
                                                 className="w-full px-4 py-3 border border-darkblue"
                                             />
                                         </div>
@@ -662,7 +662,7 @@ const Page = () => {
                                             <input
                                                 name="email"
                                                 type="email"
-                                                placeholder="Email*"
+                                                placeholder="အီးမေးလ်*"
                                                 className="w-full px-4 py-3 border border-darkblue"
                                             />
                                         </div>
@@ -670,14 +670,14 @@ const Page = () => {
                                             <input
                                                 name="subject"
                                                 type="text"
-                                                placeholder="Subject*"
+                                                placeholder="အကြောင်းအရာ*"
                                                 className="w-full px-4 py-3 border border-darkblue"
                                             />
                                         </div>
                                         <div>
                                             <textarea
                                                 name="message"
-                                                placeholder="Your Message*"
+                                                placeholder="မက်ဆေ့*"
                                                 className="w-full px-4 py-3 border border-darkblue h-40"
                                             ></textarea>
                                         </div>
@@ -685,7 +685,7 @@ const Page = () => {
                                             <input
                                                 type="submit"
                                                 className="w-[30%] bg-rosesecondary text-darkblue py-2 sm:py-3 rounded text-sm sm:text-base hover:bg-darkblue hover:text-mild transition-all duration-300 ease-in-out transform"
-                                                value="SEND"
+                                                value="ပို့ရန်"
                                             />
 
                                             <p className="form-message mt-2 text-sm text-darkblue"></p>
@@ -699,7 +699,7 @@ const Page = () => {
                             <div className="bg-white p-8 rounded-lg">
                                 <div className="mb-6">
                                     <h3 className="text-3xl font-bold text-darkblue">
-                                        Contact Us
+                                        ဆက်သွယ်ရန်
                                     </h3>
                                     <div className="flex w-full h-0.5 justify-start items-start my-4">
                                         <div className="w-[25%] h-full bg-darkblue"></div>
@@ -772,9 +772,11 @@ const Page = () => {
                                 <span className="text-rosesecondary">US</span>
                             </h5>
                             <p className="text-sm leading-7">
-                                We offer a range of services designed to meet
-                                your needs, ensuring quality and professionalism
-                                at every step.
+                                Safe Forever သည် သင့်လိုအပ်ချက်များကို
+                                ဖြည့်ဆည်းရန် ရည်ရွယ်ထားသည့်
+                                ဝန်ဆောင်မှုများစွာကို ထုတ်ပေးပြီး အရည်အသွေးနှင့်
+                                ပရော်ဖက်ရှင်နယ်ဆန်မှုကို သေချာစွာ အလေးထား
+                                ဆောင်ရွက်ပါသည်
                             </p>
                         </div>
 
@@ -813,27 +815,27 @@ const Page = () => {
                             <ul className="text-sm space-y-2 leading-7">
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Home
+                                        မူလစာမျက်နှာ
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        About
+                                        အကြောင်းအရာ
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Services
+                                        ၀န်ဆောင်မှုများ
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Blog
+                                        ဘလော့ခ်
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Contact
+                                        ဆက်သွယ်ရန်
                                     </a>
                                 </li>
                             </ul>
@@ -841,12 +843,13 @@ const Page = () => {
 
                         <div className="w-full flex flex-col px-4 mb-5">
                             <h5 className="text-lg font-bold mb-4 leading-7">
-                                NEWSLETTER{' '}
-                                <span className="text-rosesecondary">NOW</span>
+                                သတင်းလွှာ{' '}
+                                <span className="text-rosesecondary"></span>
                             </h5>
                             <p className="text-sm mb-4 leading-7">
-                                Stay updated with the latest news and offers by
-                                subscribing to our newsletter.
+                                Safe Forever နဲ့ ပတ်သက်ပြီး နောက်ဆုံးပေါ်
+                                သတင်းများကို သတိပြုရန် သတင်းလွှာကို
+                                စာရင်းသွင်းပါ
                             </p>
                             <div className="flex mb-4">
                                 <input

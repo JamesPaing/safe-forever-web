@@ -9,11 +9,16 @@ import {
     FaLinkedin,
     FaPaperPlane,
     FaGooglePlusG,
-    FaPhone,
-    FaMailBulk,
-    FaAddressCard,
+    FaVideo,
+    FaSmile,
+    FaTrophy,
+    FaProjectDiagram,
+    FaCoffee,
 } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Page = () => {
     const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -36,7 +41,88 @@ const Page = () => {
     const goBackToMainMenu = () => {
         setMenuState('main');
     };
+
     const pathname = usePathname();
+
+    if (!mounted) {
+        return null;
+    }
+
+    const guards = [
+        {
+            id: 1,
+            name: 'U Ye Zaw Aung',
+            position: 'CEO',
+            image: '/yzo.jpg',
+        },
+        {
+            id: 2,
+            name: 'U Ye Zaw Aung',
+            position: 'CEO',
+            image: '/yzo.jpg',
+        },
+        {
+            id: 3,
+            name: 'U Ye Zaw Aung',
+            position: 'CEO',
+            image: '/yzo.jpg',
+        },
+    ];
+
+    const counterData = [
+        {
+            icon: <FaSmile className="text-3xl" />,
+            count: 120,
+            label: 'Happy Clients',
+        },
+        {
+            icon: <FaTrophy className="text-3xl" />,
+            count: 90,
+            label: 'Award Winning',
+        },
+        {
+            icon: <FaProjectDiagram className="text-3xl" />,
+            count: 158,
+            label: 'Project',
+        },
+        {
+            icon: <FaCoffee className="text-3xl" />,
+            count: 249,
+            label: 'Cups of Coffee',
+        },
+    ];
+
+    function Counter({ icon, count, label }) {
+        const [currentCount, setCurrentCount] = useState(0);
+
+        useEffect(() => {
+            const timer = setInterval(() => {
+                setCurrentCount((prevCount) => {
+                    if (prevCount < count) {
+                        return prevCount + 1;
+                    }
+                    clearInterval(timer);
+                    return prevCount;
+                });
+            }, 20);
+
+            return () => clearInterval(timer);
+        }, [count]);
+
+        return (
+            <div className="text-center mt-8 lg:mt-0 text-mild">
+                <div className="flex justify-center items-center mb-4">
+                    {icon}
+                </div>
+                <h3 className="text-4xl font-bold mb-2">{currentCount}</h3>
+                <p className="text-lg">{label}</p>
+                <div className="flex justify-center mt-3">
+                    <hr className="w-[50px]" />
+                </div>
+            </div>
+        );
+    }
+
     return (
         <main className="scroll-smooth">
             {/* Header Start */}
@@ -47,7 +133,7 @@ const Page = () => {
                     <div className="container mx-auto px-[55px]">
                         <div className="flex justify-between items-center">
                             <div className="lefttopbar">
-                                <p>Have any questions? +959450703535</p>{' '}
+                                <p>မေးစရာရှိပါသလား? +959450703535</p>{' '}
                             </div>
                             <div className="righttopbar">
                                 <ul className="flex space-x-7">
@@ -127,14 +213,14 @@ const Page = () => {
                         <ul className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-2 px-5 py-5 items-center">
                             <li className="relative group">
                                 <a
-                                    href="/"
+                                    href="/mm"
                                     className={`hover:text-rosesecondary border-spacing-1 p-3 ${
-                                        pathname === '/'
+                                        pathname === '/mm'
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    HOME
+                                    မူလစာမျက်နှာ
                                 </a>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] h-auto hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2">
@@ -157,30 +243,30 @@ const Page = () => {
                             </li>
                             <li>
                                 <a
-                                    href="about-us"
+                                    href="/mm/about-us"
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname === '/about-us'
+                                        pathname === '/mm/about-us'
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    ABOUT
+                                    အကြောင်းအရာ
                                 </a>
                             </li>
                             <li className="relative group">
                                 <span
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname.startsWith('/services')
+                                        pathname.startsWith('/mm/services')
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    SERVICES
+                                    ၀န်ဆောင်မှုများ
                                 </span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2">
                                         <a
-                                            href="services"
+                                            href="/mm/services"
                                             className="hover:text-rosesecondary"
                                         >
                                             Service Page
@@ -188,7 +274,7 @@ const Page = () => {
                                     </li>
                                     <li className="py-2">
                                         <a
-                                            href="services/service-detail"
+                                            href="/mm/services/service-detail"
                                             className="hover:text-rosesecondary"
                                         >
                                             Service Detail Page
@@ -199,17 +285,17 @@ const Page = () => {
                             <li className="relative group">
                                 <span
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname.startsWith('/posts')
+                                        pathname.startsWith('/mm/posts')
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    BLOG
+                                    ဘလော.
                                 </span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2">
                                         <a
-                                            href="posts"
+                                            href="/mm/posts"
                                             className="hover:text-rosesecondary"
                                         >
                                             Blog Page
@@ -217,7 +303,7 @@ const Page = () => {
                                     </li>
                                     <li className="py-2">
                                         <a
-                                            href="posts/blog-detail"
+                                            href="/mm/posts/blog-detail"
                                             className="hover:text-rosesecondary"
                                         >
                                             Blog Detail Page
@@ -227,14 +313,14 @@ const Page = () => {
                             </li>
                             <li>
                                 <a
-                                    href="contact-us"
+                                    href="/mm/contact-us"
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname === '/contact-us'
+                                        pathname === '/mm/contact-us'
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    CONTACT
+                                    ဆက်သွယ်ရန်
                                 </a>
                             </li>
                             <li>
@@ -247,7 +333,7 @@ const Page = () => {
        hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
        before:-z-10 after:-z-10 z-10"
                                 >
-                                    Get Quotation
+                                    Quotation ယူရန်
                                 </a>
                             </li>
                         </ul>
@@ -614,153 +700,205 @@ const Page = () => {
             <Breadcrumb />
             {/* Hero Section End */}
 
-            {/* Map Start */}
-
-            <section className="map-section">
-                {/* <h2 className="text-center text-4xl text-darkblue font-bold mb-5">Find Us Here</h2> */}
-                <div className="mx-auto">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11853.221397941516!2d96.16006139659912!3d16.851765675454452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1939052febc41%3A0xeda230e2062857e0!2sSafe%20Forever%20Security%20Service%20Co.%2CLtd!5e1!3m2!1sen!2smm!4v1726126405760!5m2!1sen!2smm"
-                        width="100%"
-                        height="500"
-                        style={{ border: 0 }}
-                        allowFullScreen=""
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                </div>
-            </section>
-            {/* Map End */}
-
-            {/* Contact Form Start */}
-
-            <div className="contact-form-area py-16">
-                <div className="container mx-auto px-4">
-                    <div className="flex flex-wrap items-center">
-                        <div className="lg:w-1/2 md:w-1/2 w-full mb-10 md:mb-0">
-                            <div className="bg-white p-8 rounded-lg shadow-lg">
-                                <div className="mb-6">
-                                    <h3 className="text-4xl font-semibold text-darkblue">
-                                        Get In Touch
+            {/* Agency Start*/}
+            <div className="section-agency-benefit flex items-center justify-center md:pt-3 text-darkblue mt-20">
+                <div className="container flex items-center justify-start px-0">
+                    <div className="flex flex-col lg:flex-row max-w-6xl h-auto lg:h-[600px] items-start w-full">
+                        {/* Content */}
+                        <div className="w-full lg:w-[60%] flex items-start justify-start lg:pr-8">
+                            <div className="flex items-start justify-start lg:p-12 p-8 w-full">
+                                <div className="w-full flex flex-col justify-center">
+                                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+                                        Safe Forever လုံခြုံရေးဝန်ဆောင်မှု{' '}
+                                        <br /> သင့်အတွက် ထာဝရလုံခြုံမှု
                                     </h3>
-                                    <div className="flex w-full h-0.5 justify-start items-start my-4">
-                                        <div className="w-[25%] h-full bg-darkblue"></div>
-                                        <div className="w-[25%] h-full bg-rosesecondary"></div>
+                                    <div className="flex w-full h-1">
+                                        <div className="w-[10%] h-[50%] bg-black"></div>
+                                        <div className="w-[10%] h-[50%] bg-red-500"></div>
                                     </div>
+                                    <br />
+                                    <p className="mb-4 font-light text-lg">
+                                        လူကြီးမင်းတို့ တန်ဖိုးထားတဲ့
+                                        အရာရာတိုင်းအတွက် ထာဝရလုံခြုံစေဖို့
+                                        မိမိတို့ Safe Forever security service
+                                        ကုမ္ပဏီမှ လုံခြုံရေးဆိုင်ရာ Free Survey
+                                        များလာရောက်ဆင်းပေးခြင်း၊ အကြံဥာဏ်များ
+                                        ဆွေးနွေးတင်ပြခြင်းများဖြင့်
+                                        လုံခြုံရေးဝန်ဆောင်မှုများ
+                                        ဆောင်ရွက်ပေးလျက်ရှိပါတယ်။ ဤ Video
+                                        လေးကတော့ မိမိတို့ Safe Forever
+                                        ကုမ္ပဏီဖြင့် လက်တွဲဆောင်ရွက်ခြင်းဖြင့်
+                                        ရရှိနိုင်သော အကျိုးကျေးဇူးများဖြစ်ပါတယ်။{' '}
+                                    </p>
+                                    <p className="mb-6 font-light text-lg">
+                                        {/* In reprehenderit in voluptate velit esse
+                                        cillum dolore eu fugiat nulla pariatur.
+                                        Excepteur sint occaecat cupidatat non
+                                        proident.*/}
+                                    </p>
+                                    <a
+                                        href="/"
+                                        className="w-[180px] relative inline-flex items-center justify-center mt-6 px-6 py-3 rounded-full text-white bg-rose overflow-hidden transition-all duration-300 ease-in-out 
+before:content-[''] before:absolute before:inset-0 before:bg-transparent before:transform before:skew-x-12 before:translate-x-1/2 before:transition-transform before:duration-300 before:ease-in-out before:origin-center
+hover:before:skew-x-5 hover:before:translate-x-5 hover:before:scale-x-100 
+after:content-[''] after:absolute after:inset-0 after:bg-darkblue after:transform after:-skew-x-12 after:translate-x-full after:transition-transform after:duration-300 after:ease-in-out after:origin-right 
+hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
+before:-z-10 after:-z-10 z-10"
+                                    >
+                                        ဆက်သွယ်ရန်
+                                    </a>
                                 </div>
-                                <form id="contact_form" action="#">
-                                    <div className="space-y-6">
-                                        <div>
-                                            <input
-                                                name="name"
-                                                type="text"
-                                                placeholder="Name*"
-                                                className="w-full px-4 py-3 border border-darkblue"
-                                            />
-                                        </div>
-                                        <div>
-                                            <input
-                                                name="email"
-                                                type="email"
-                                                placeholder="Email*"
-                                                className="w-full px-4 py-3 border border-darkblue"
-                                            />
-                                        </div>
-                                        <div>
-                                            <input
-                                                name="subject"
-                                                type="text"
-                                                placeholder="Subject*"
-                                                className="w-full px-4 py-3 border border-darkblue"
-                                            />
-                                        </div>
-                                        <div>
-                                            <textarea
-                                                name="message"
-                                                placeholder="Your Message*"
-                                                className="w-full px-4 py-3 border border-darkblue h-40"
-                                            ></textarea>
-                                        </div>
-                                        <div>
-                                            <input
-                                                type="submit"
-                                                className="w-[30%] bg-rosesecondary text-darkblue py-2 sm:py-3 rounded text-sm sm:text-base hover:bg-darkblue hover:text-mild transition-all duration-300 ease-in-out transform"
-                                                value="SEND"
-                                            />
-
-                                            <p className="form-message mt-2 text-sm text-darkblue"></p>
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
 
-                        <div className="lg:w-5/12 lg:ml-auto md:w-1/2 w-full p-5">
-                            <div className="bg-white p-8 rounded-lg">
-                                <div className="mb-6">
-                                    <h3 className="text-3xl font-bold text-darkblue">
-                                        Contact Us
-                                    </h3>
-                                    <div className="flex w-full h-0.5 justify-start items-start my-4">
-                                        <div className="w-[25%] h-full bg-darkblue"></div>
-                                        <div className="w-[25%] h-full bg-rosesecondary"></div>
-                                    </div>
+                        {/* Image */}
+                        <div className="w-full lg:w-[40%] md:w-full sm:w-full flex items-center justify-center lg:pl-8 mt-8 lg:mt-0">
+                            <div className="relative h-auto w-full max-w-[400px] md:max-w-[400px] sm:max-w-[300px] px-4">
+                                <Image
+                                    src="/sf4.jpg"
+                                    alt="Security Img"
+                                    className="object-cover rounded-lg shadow-md w-full h-auto"
+                                    width={800}
+                                    height={600}
+                                />
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <a
+                                        className="video-popup bg-rose p-3 rounded-full shadow-lg hover:scale-105 transition-transform"
+                                        href="https://web.facebook.com/100063777263919/videos/585196322199650"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i className="text-darkblue text-3xl">
+                                            <FaVideo />
+                                        </i>
+                                    </a>
                                 </div>
-                                <ul className="space-y-6">
-                                    <li className="flex items-center space-x-4">
-                                        <a
-                                            href="#"
-                                            className="border-darkblue border text-darkblue hover:bg-darkblue hover:text-mild rounded-full  w-8 h-8 flex items-center justify-center"
-                                        >
-                                            <FaPhone />
-                                        </a>
-
-                                        <p className="text-darkblue">
-                                            <a href="#" className="block">
-                                                +95 9 45070 3535
-                                            </a>
-                                            {/* <a href="#" className="block">+012 345 678 102</a>  */}
-                                        </p>
-                                    </li>
-                                    <li className="flex items-center space-x-4">
-                                        <a
-                                            href="#"
-                                            className="border-darkblue border text-darkblue hover:bg-darkblue hover:text-mild rounded-full  w-8 h-8 flex items-center justify-center"
-                                        >
-                                            <FaMailBulk />
-                                        </a>
-                                        <p className="text-darkblue">
-                                            <a href="#" className="block">
-                                                safeforever.services@gmail.com
-                                            </a>
-                                            {/*  <a href="#" className="block">
-                                                urwebsite@name.com
-                                            </a> */}
-                                        </p>
-                                    </li>
-                                    <li className="flex items-center space-x-4">
-                                        <a
-                                            href="#"
-                                            className="border-darkblue border text-darkblue hover:bg-darkblue hover:text-mild rounded-full  w-8 h-8 flex items-center justify-center"
-                                        >
-                                            <FaAddressCard />
-                                        </a>
-                                        <p className="text-darkblue">
-                                            No 291,Room 5B,5 th Floor, Yazar{' '}
-                                            <br />
-                                            Dirit Road, No.7 Ward,South Okkalapa{' '}
-                                            <br />
-                                            Tsp, Yangon, Myanmar
-                                        </p>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {/* Agency End */}
 
-            {/* Contact Form End */}
+            {/* Counter Start */}
+            <div
+                className="py-24 bg-cover bg-center relative"
+                style={{ backgroundImage: "url('/sf5.jpg')" }}
+            >
+                <div className="absolute inset-0 bg-black opacity-70"></div>
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="bg-white bg-opacity-10 p-8 rounded-lg">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {counterData.map((item, index) => (
+                                <Counter
+                                    key={index}
+                                    icon={item.icon}
+                                    count={item.count}
+                                    label={item.label}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* Counter End */}
+
+            {/* Guard Start */}
+            <div className="section-team mt-10 pt-8 pb-10">
+                <div className="container mx-auto px-4 mt-5">
+                    <div className="flex justify-center mb-12">
+                        <div className="text-center">
+                            <div className="section-title">
+                                <h2 className="text-4xl font-bold mb-4 text-darkblue">
+                                    Board of Directors များ
+                                </h2>
+                                <div className="flex w-full h-0.5 justify-center items-center mb-4">
+                                    <div className="w-[10%] h-full bg-black"></div>
+                                    <div className="w-[5%] h-[4px] bg-rosesecondary"></div>
+                                    <div className="w-[10%] h-full bg-black"></div>
+                                </div>
+                                <p className="font-light text-darkblue">
+                                    Board of Directors အဖွဲ့သည်
+                                    အတွေ့အကြုံပြည့်ဝသည့်
+                                    ပရော်ဖက်ရှင်နယ်များဖြင့် <br />
+                                    ဖွဲ့စည်းထားပြီး လုပ်ငန်းကို
+                                    အောင်မြင်မှုဆီသို့ ဦးဆောင်ပေးနေပါသည်
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Start Team Area */}
+                    <div className="flex flex-wrap -mx-4">
+                        {guards.map((guard) => (
+                            <div
+                                key={guard.id}
+                                className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8"
+                            >
+                                <div className="bg-white shadow-lg rounded-lg overflow-hidden group hover:bg-darkblue hover:text-mild">
+                                    <a href="#">
+                                        <div className="overflow-hidden">
+                                            <Image
+                                                src={guard.image}
+                                                alt={`${guard.name} Image`}
+                                                className="w-full h-auto object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:translate-x-1 group-hover:rotate-3"
+                                                width={800}
+                                                height={600}
+                                            />
+                                        </div>
+                                    </a>
+                                    <hr className="text-mild" />
+                                    <div className="p-4 text-center">
+                                        <h4 className="text-xl font-bold">
+                                            <a href="#">{guard.name}</a>
+                                        </h4>
+                                        <span className="">
+                                            {guard.position}
+                                        </span>
+                                        <hr className="text-mild mt-3" />
+                                        <ul className="flex justify-center mt-4 space-x-4">
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    className="hover:text-rosesecondary"
+                                                >
+                                                    <FaFacebook />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    className="hover:text-rosesecondary"
+                                                >
+                                                    <FaTwitter />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    className="hover:text-rosesecondary"
+                                                >
+                                                    <FaPinterest />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    className="hover:text-rosesecondary"
+                                                >
+                                                    <FaLinkedin />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    {/* End Team Area */}
+                </div>
+            </div>
+
+            {/* Guard End */}
 
             {/* Footer Start */}
             <footer className="bg-mild text-footertext">
@@ -772,9 +910,11 @@ const Page = () => {
                                 <span className="text-rosesecondary">US</span>
                             </h5>
                             <p className="text-sm leading-7">
-                                We offer a range of services designed to meet
-                                your needs, ensuring quality and professionalism
-                                at every step.
+                                Safe Forever သည် သင့်လိုအပ်ချက်များကို
+                                ဖြည့်ဆည်းရန် ရည်ရွယ်ထားသည့်
+                                ဝန်ဆောင်မှုများစွာကို ထုတ်ပေးပြီး အရည်အသွေးနှင့်
+                                ပရော်ဖက်ရှင်နယ်ဆန်မှုကို သေချာစွာ အလေးထား
+                                ဆောင်ရွက်ပါသည်
                             </p>
                         </div>
 
@@ -813,27 +953,27 @@ const Page = () => {
                             <ul className="text-sm space-y-2 leading-7">
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Home
+                                        မူလစာမျက်နှာ
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        About
+                                        အကြောင်းအရာ
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Services
+                                        ၀န်ဆောင်မှုများ
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Blog
+                                        ဘလော့ခ်
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Contact
+                                        ဆက်သွယ်ရန်
                                     </a>
                                 </li>
                             </ul>
@@ -841,12 +981,13 @@ const Page = () => {
 
                         <div className="w-full flex flex-col px-4 mb-5">
                             <h5 className="text-lg font-bold mb-4 leading-7">
-                                NEWSLETTER{' '}
-                                <span className="text-rosesecondary">NOW</span>
+                                သတင်းလွှာ{' '}
+                                <span className="text-rosesecondary"></span>
                             </h5>
                             <p className="text-sm mb-4 leading-7">
-                                Stay updated with the latest news and offers by
-                                subscribing to our newsletter.
+                                Safe Forever နဲ့ ပတ်သက်ပြီး နောက်ဆုံးပေါ်
+                                သတင်းများကို သတိပြုရန် သတင်းလွှာကို
+                                စာရင်းသွင်းပါ
                             </p>
                             <div className="flex mb-4">
                                 <input

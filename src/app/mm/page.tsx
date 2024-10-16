@@ -47,63 +47,65 @@ export default function Home() {
     const services = [
         {
             id: 1,
-            title: 'Home Security',
-            description: '24/7 Monitoring for the Security of Your Home.',
+            title: 'အိမ် လုံခြုံရေး',
+            description:
+                'လူကြီးမင်းတို့၏အိမ်၏ လုံခြုံရေးအတွက် ၂၄ နာရီစောင့်ကြည့်ပေးခြင်း။',
             image: '/sf3.jpg',
         },
         {
             id: 2,
-            title: 'Building Security',
+            title: 'အဆောက်အဦး လုံခြုံရေး',
             description:
                 'Comprehensive security solutions for businesses of all sizes.',
             image: '/sf10.jpg',
         },
         {
             id: 3,
-            title: 'Office Security',
+            title: 'ရုံးခန်း လုံခြုံရေး',
             description:
-                'Monitoring for the Security of Office Assets and Staff.',
+                'ရုံးဝင်ပစ္စည်းများနှင့် ဝန်ထမ်းများ၏ လုံခြုံရေးအတွက်စောင့်ကြည့်ပေးခြင်း။',
             image: '/sf1.jpg',
         },
         {
             id: 4,
-            title: 'Warehouse Security',
+            title: 'ဂိုဒေါင် လုံခြုံရေး',
             description:
-                'Safely monitoring the warehouse where goods are stored to protect against unauthorized access.',
+                'အထည်အလက်များသိမ်းဆည်းထားသော ဂိုဒေါင်ကို လုံခြုံစွာစောင့်ကြည့်ကာ တရားမဝင်ဝင်ရောက်မှုမှ ကာကွယ်ပေးခြင်း။',
             image: '/sf11.jpg',
         },
         {
             id: 5,
-            title: 'Hotel Security',
+            title: 'ဟိုတယ် လုံခြုံရေး',
             description:
-                'Monitoring the hotel environment to ensure the security of guests and staff.',
+                'ဧည်သည်များနှင့် ဝန်ထမ်းများ၏ လုံခြုံရေးအတွက် ဟိုတယ်ပတ်ဝန်းကျင်ကို စောင့်ကြည့်ကာကွယ်ပေးခြင်း။',
             image: '/sf5.jpg',
         },
         {
             id: 6,
-            title: 'Restaurant Security',
+            title: 'စားသောက်ဆိုင် လုံခြုံရေး',
             description:
-                'Creating a secure and trustworthy environment in the restaurant',
+                'စားသောက်ဆိုင်တွင် လုံခြုံစိတ်ချရသော ပတ်ဝန်းကျင်တည်ဆောက်ပေးခြင်း။',
             image: '/sf6.jpg',
         },
         {
             id: 7,
-            title: 'Store Security',
-            description: 'Monitoring to prevent theft in the retail store',
+            title: 'အရောင်းဆိုင် လုံခြုံရေး',
+            description:
+                'အရောင်းဆိုင်တွင် လုယက်မှုမဖြစ်အောင် စောင့်ကြည့်ကာ ကာကွယ်ပေးခြင်း။',
             image: '/sf8.jpg',
         },
         {
             id: 8,
-            title: 'Factory Security',
+            title: 'စက်ရုံ လုံခြုံရေး',
             description:
-                'Monitoring to ensure the security of equipment and workers in the factory',
+                'စက်ရုံတွင်ရှိသည့် ပစ္စည်းကိရိယာများနှင့် အလုပ်သမားများ၏ လုံခြုံရေးအတွက် စောင့်ကြည့်ကာကွယ်ပေးခြင်း။',
             image: '/sf7.jpg',
         },
         {
             id: 9,
-            title: 'Workshop Security',
+            title: 'အလုပ်ရုံ လုံခြုံရေး',
             description:
-                'Monitoring to ensure the security of tools and workers in the workshop',
+                'အလုပ်ရုံတွင်ရှိသည့် ကိရိယာများနှင့် အလုပ်သမားများ၏ လုံခြုံရေးအတွက် စောင့်ကြည့်ကာကွယ်ပေးခြင်း။',
             image: '/sf1.jpg',
         },
     ];
@@ -189,7 +191,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                     <div className="container mx-auto px-[55px]">
                         <div className="flex justify-between items-center">
                             <div className="lefttopbar">
-                                <p>Have any questions? +959450703535</p>
+                                <p>မေးစရာရှိပါသလား? +959450703535</p>
                             </div>
                             <div className="righttopbar">
                                 <ul className="flex space-x-7">
@@ -270,14 +272,14 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                         <ul className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-2 px-5 py-5 items-center">
                             <li className="relative group">
                                 <a
-                                    href="/"
+                                    href="/mm"
                                     className={`hover:text-rosesecondary border-spacing-1 p-3 ${
-                                        pathname === '/'
+                                        pathname === '/mm'
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    HOME
+                                    မူလစာမျက်နှာ
                                 </a>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] h-auto hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2">
@@ -300,30 +302,30 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                             </li>
                             <li>
                                 <a
-                                    href="about-us"
+                                    href="/mm/about-us"
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname === '/about-us'
+                                        pathname === '/mm/about-us'
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    ABOUT
+                                    အကြောင်းအရာ
                                 </a>
                             </li>
                             <li className="relative group">
                                 <span
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname.startsWith('/services')
+                                        pathname.startsWith('/mm/services')
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    SERVICES
+                                    ၀န်ဆောင်မှုများ
                                 </span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2">
                                         <a
-                                            href="services"
+                                            href="/mm/services"
                                             className="hover:text-rosesecondary"
                                         >
                                             Service Page
@@ -331,7 +333,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                     </li>
                                     <li className="py-2">
                                         <a
-                                            href="services/service-detail"
+                                            href="/mm/services/service-detail"
                                             className="hover:text-rosesecondary"
                                         >
                                             Service Detail Page
@@ -342,17 +344,17 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                             <li className="relative group">
                                 <span
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname.startsWith('/posts')
+                                        pathname.startsWith('/mm/posts')
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    BLOG
+                                    ဘလော.
                                 </span>
                                 <ul className="z-20 group px-7 py-3 overflow-hidden absolute w-[210px] hidden bg-mininav text-black border-gray-200 group-hover:block top-8 left-0 border-b-4 border-b-rose">
                                     <li className="py-2">
                                         <a
-                                            href="posts"
+                                            href="/mm/posts"
                                             className="hover:text-rosesecondary"
                                         >
                                             Blog Page
@@ -360,7 +362,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                     </li>
                                     <li className="py-2">
                                         <a
-                                            href="posts/blog-detail"
+                                            href="/mm/posts/blog-detail"
                                             className="hover:text-rosesecondary"
                                         >
                                             Blog Detail Page
@@ -370,14 +372,14 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                             </li>
                             <li>
                                 <a
-                                    href="contact-us"
+                                    href="/mm/contact-us"
                                     className={`hover:text-rosesecondary p-3 ${
-                                        pathname === '/contact-us'
+                                        pathname === '/mm/contact-us'
                                             ? 'text-rosesecondary'
                                             : ''
                                     }`}
                                 >
-                                    CONTACT
+                                    ဆက်သွယ်ရန်
                                 </a>
                             </li>
                             <li>
@@ -390,7 +392,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
        hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
        before:-z-10 after:-z-10 z-10"
                                 >
-                                    Get Quotation
+                                    Quotation ယူရန်
                                 </a>
                             </li>
                         </ul>
@@ -796,7 +798,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
    hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
    before:-z-10 after:-z-10 z-10"
                                 >
-                                    Get Appointment
+                                    Appointment ယူရန်
                                 </a>
                             </div>
                         </div>
@@ -831,16 +833,19 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                         </svg>
                                     </div>
                                     <h4 className="text-xl font-semibold text-darkblue">
-                                        Reliability
+                                        ယုံကြည်စိတ်ချမှု
                                     </h4>
                                 </div>
                                 <div className="flex-grow min-h-0 ml-12">
                                     <p className="text-darkblue">
-                                        We consistently provide reliable
-                                        services to assist in your security. We
-                                        strive to meet your needs accurately and
-                                        promptly, ensuring that we can create
-                                        dependable security for you at any time.
+                                        ကျွန်ုပ်တို့က သင့် လုံခြုံရေးအတွက်
+                                        အထောက်အကူဖြစ်စေရန် အမြဲတမ်း
+                                        ယုံကြည်စိတ်ချရသော
+                                        ဝန်ဆောင်မှုများပေးပါသည်။
+                                        သင့်လိုအပ်ချက်များကို အချိန်မှန်နဲ့
+                                        တိကျစွာ ဖြည့်ဆည်းဖို့ ကြိုးစားပြီး
+                                        သင့်အတွက် အချိန်မရွေး ယုံကြည်စိတ်ချရတဲ့
+                                        လုံခြုံရေးကို ဖန်တီးနိုင်ပါသည်။
                                     </p>
                                 </div>
                             </div>
@@ -868,19 +873,19 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                         </svg>
                                     </div>
                                     <h4 className="text-xl font-semibold text-darkblue">
-                                        Security Guard
+                                        လုံခြုံရေးဝန်ထမ်းများ
                                     </h4>
                                 </div>
                                 <div className="flex-grow min-h-0  ml-12">
                                     <p className="text-darkblue">
-                                        Our security personnel are specially
-                                        trained to ensure the safety of your
-                                        home, office, and buildings, working
-                                        diligently to provide the most effective
-                                        protection in emergency situations. They
-                                        possess the enthusiasm and expertise
-                                        needed to enhance security in the
-                                        workplace.
+                                        ကျွန်ုပ်တို့၏ လုံခြုံရေးဝန်ထမ်းများသည်
+                                        သင်၏ အိမ်၊ ရုံးနှင့် အဆောက်အအုံများကို
+                                        လုံခြုံစိတ်ချစေရန် အထူးပြင်ဆင်ထားပြီး၊
+                                        အရေးပေါ်အခြေအနေများတွင် အထိရောက်ဆုံး
+                                        ကာကွယ်နိုင်ရန် ကြိုးစားနေကြသည်။
+                                        ၎င်းတို့သည် လုပ်ငန်းခွင်၌ လုံခြုံမှုကို
+                                        မြှင့်တင်ရန် စိတ်အားထက်သန်မှုနှင့်
+                                        ကျွမ်းကျင်မှုကို ထားရှိထားပါသည်။
                                     </p>
                                 </div>
                             </div>
@@ -908,15 +913,17 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                         </svg>
                                     </div>
                                     <h4 className="text-xl font-semibold text-darkblue">
-                                        Motivated Guards
+                                        စိတ်အားထက်သန်သော လုံခြုံရေးများ
                                     </h4>
                                 </div>
                                 <div className="flex-grow min-h-0  ml-12">
                                     <p className="text-darkblue">
-                                        Our security personnel are deeply
-                                        passionate about their work and treat
-                                        security as a critical priority, taking
-                                        full responsibility for its protection
+                                        ကျွန်ုပ်တို့၏ လုံခြုံရေးဝန်ထမ်းများသည်
+                                        လုပ်ငန်းအတွက်
+                                        အထူးစိတ်အားထက်သန်မှုရှိပြီး၊
+                                        လုံခြုံရေးကို အရေးပါတဲ့အရာအဖြစ်
+                                        လေးစားလျက် တာဝန်ယူမှုအပြည့်အဝဖြင့်
+                                        စောင့်ရှောက်လျက်ရှိကြသည်။
                                     </p>
                                 </div>
                             </div>
@@ -944,15 +951,18 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                         </svg>
                                     </div>
                                     <h4 className="text-xl font-semibold text-darkblue">
-                                        24/7 Services
+                                        24/7 ဝန်ဆောင်မှု
                                     </h4>
                                 </div>
                                 <div className="flex-grow min-h-0 ml-12">
                                     <p className="text-darkblue">
-                                        Providing 24/7 service is our core
-                                        principle, and we strive to ensure your
-                                        security and peace of mind whenever you
-                                        need it.
+                                        ၂၄ နာရီ ၇ ရက် ပတ်လုံး
+                                        ဝန်ဆောင်မှုပေးခြင်းက ကျွန်ုပ်တို့၏
+                                        အဓိကအချက်ဖြစ်ပြီး၊ အချိန်မရွေး
+                                        လိုအပ်သည့်အခါတွင် လူကြီးမင်းတို့၏
+                                        လုံခြုံရေးနှင့် စိတ်ချရမှုကို
+                                        ပေးစွမ်းနိုင်ရန် အစွမ်းကုန်
+                                        ကြိုးစားဆောင်ရွက်လျက်ရှိပါသည်။
                                     </p>
                                 </div>
                             </div>
@@ -971,8 +981,8 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                             <div className="flex items-start justify-start lg:p-12 p-8 w-full">
                                 <div className="w-full flex flex-col justify-center">
                                     <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-                                        Safe Forever Security Services
-                                        <br /> Permanent Security for You
+                                        Safe Forever လုံခြုံရေးဝန်ဆောင်မှု{' '}
+                                        <br /> သင့်အတွက် ထာဝရလုံခြုံမှု
                                     </h3>
                                     <div className="flex w-full h-1">
                                         <div className="w-[10%] h-[50%] bg-black"></div>
@@ -980,14 +990,17 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                     </div>
                                     <br />
                                     <p className="mb-4 font-light text-lg">
-                                        To ensure the permanent security of
-                                        everything you value, our Safe Forever
-                                        security service company provides free
-                                        security surveys and consultations on
-                                        security matters. This video highlights
-                                        the benefits you can gain from
-                                        collaborating with our Safe Forever
-                                        company.
+                                        လူကြီးမင်းတို့ တန်ဖိုးထားတဲ့
+                                        အရာရာတိုင်းအတွက် ထာဝရလုံခြုံစေဖို့
+                                        မိမိတို့ Safe Forever security service
+                                        ကုမ္ပဏီမှ လုံခြုံရေးဆိုင်ရာ Free Survey
+                                        များလာရောက်ဆင်းပေးခြင်း၊ အကြံဥာဏ်များ
+                                        ဆွေးနွေးတင်ပြခြင်းများဖြင့်
+                                        လုံခြုံရေးဝန်ဆောင်မှုများ
+                                        ဆောင်ရွက်ပေးလျက်ရှိပါတယ်။ ဤ Video
+                                        လေးကတော့ မိမိတို့ Safe Forever
+                                        ကုမ္ပဏီဖြင့် လက်တွဲဆောင်ရွက်ခြင်းဖြင့်
+                                        ရရှိနိုင်သော အကျိုးကျေးဇူးများဖြစ်ပါတယ်။
                                     </p>
                                     <p className="mb-6 font-light text-lg">
                                         {/* In reprehenderit in voluptate velit esse
@@ -1004,7 +1017,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
    hover:after:skew-x-0 hover:after:translate-x-0 hover:after:scale-x-100 
    before:-z-10 after:-z-10 z-10"
                                     >
-                                        Contact Us
+                                        ဆက်သွယ်ရန်
                                     </a>
                                 </div>
                             </div>
@@ -1044,7 +1057,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                 <div className="container mx-auto px-4 my-10">
                     <div className="text-center mb-12 text-darkblue">
                         <h2 className="text-4xl font-bold mb-4 text-darkblue">
-                            Our Services
+                            ၀န်ဆောင်မှုများ
                         </h2>
                         <div className="flex w-full h-0.5 justify-center items-center mb-4">
                             <div className="w-[4%] h-full bg-black"></div>
@@ -1052,13 +1065,18 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                             <div className="w-[4%] h-full bg-black"></div>
                         </div>
                         <p className="font-light text-darkblue">
-                            In accordance with the company's motto, we are
-                            working diligently 24 hours a day,{' '}
-                            <br className="hidden sm:inline" /> both day and
-                            night, to ensure the security of your entrusted
-                            home, building, office, warehouse,{' '}
-                            <br className="hidden sm:inline" /> hotel,
-                            restaurant, retail store, factory, and workplace
+                            ယုံကြည်စွာအပ်နှံလာသော လူကြီးမင်းတို့၏ အိမ်/အဆောက်အဦ/{' '}
+                            <br className="hidden sm:inline" />
+                            ရုံးခန်း/ ဂိုဒေါင်/ ဟိုတယ်/
+                            စားသောက်ဆိုင်/အရောင်းဆိုင်/{' '}
+                            <br className="hidden sm:inline" /> စက်ရုံ/ အလုပ်ရုံ
+                            အစရှိသည်တို့၏ လုံခြုံရေးအတွက် ကုမ္ပဏီ၏
+                            ဆောင်ပုဒ်နှင့်အညီ{' '}
+                            <br className="hidden sm:inline" /> ၂၄ နာရီ နေ့/ည
+                            အထူးကြိုးစားဆောင်ရွက်လျက်ရှိပါတယ်
+                            {/* Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit sed do <br className="hidden sm:inline" />
+                            eiusmod tempor incididunt ut labore */}
                         </p>
                     </div>
 
@@ -1117,7 +1135,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                         sm:text-sm sm:px-4 sm:py-2
                         xs:text-xs xs:px-3 xs:py-1.5"
                                                 >
-                                                    READ MORE
+                                                    ဆက်ဖတ်ရန်
                                                 </a>
                                             </div>
                                         </div>
@@ -1142,7 +1160,8 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                             <div className="repair-choose-inner py-5">
                                 <div className="section-title title-2">
                                     <h2 className="text-2xl sm:text-3xl font-semibold text-darkblue">
-                                        Why Choose Us
+                                        ဘာလို့ ကျွန်တော်များကို
+                                        ရွေးခြယ်သင့်ပါသလဲ
                                     </h2>
                                     <div className="flex w-full h-1 mt-3">
                                         <div className="w-[10%] h-[50%] bg-black"></div>
@@ -1151,10 +1170,11 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                 </div>
                                 <div className="choose-resone-inner mt-5 font-light">
                                     <p className="text-darkblue text-sm sm:text-base">
-                                        24-hour security service, complete
-                                        customer service, cost-effectiveness,
-                                        and responsive security personnel
-                                        provide you with peace of mind.
+                                        ၂၄ နာရီ လုံခြုံရေးဝန်ဆောင်မှု၊ Customer
+                                        Service အပြည့်အဝ၊ စရိတ်သက်သာခြင်းနှင့်
+                                        အရေးပေါ်ကိုင်တွယ်နိုင်သည့်
+                                        လုံခြုံရေးဝန်ထမ်းများဖြင့်
+                                        စိတ်ချလုံခြုံမှု ရရှိစေသည်။
                                     </p>
 
                                     {/* Single Service */}
@@ -1177,17 +1197,20 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                         </div>
                                         <div className="content ml-4 sm:ml-6">
                                             <h4 className="text-lg sm:text-xl font-semibold">
-                                                Prevention of Security Personnel
-                                                Issues
+                                                လုံခြုံရေးဝန်ထမ်းပြဿနာများကာကွယ်ခြင်း
                                             </h4>
                                             <p className="text-darkblue mt-2 text-sm sm:text-base">
-                                                Utilizing our services for
-                                                security-related breaches, such
-                                                as unauthorized entry and exits
-                                                by personal security personnel,
-                                                helps save time in organizing
-                                                and managing those security
-                                                sectors.
+                                                ကိုယ်ပိုင်လုံခြုံရေးဝန်ထမ်းများ
+                                                ဖြစ်လေ့ဖြစ်ထရှိသော
+                                                လုပ်ငန်းခွင်မှ ခွင့်ယူမှု၊
+                                                နှုတ်ထွက်မှု အစရှိသည့်
+                                                လုံခြုံရေးဆိုင်ရာ
+                                                လစ်ဟာမှုများအတွက် မိမိတို့
+                                                ဝန်ဆောင်မှုကို
+                                                အသုံးပြုခြင်းကြောင့် အဆိုပါ
+                                                လုံခြုံရေးဆိုင်ရာ အခန်းကဏ္ဍများ
+                                                စီစဉ် ဆောင်ရွက်ရခြင်းများအတွက်
+                                                အချိန်ကုန်သက်သာခြင်း။
                                             </p>
                                         </div>
                                     </div>
@@ -1212,11 +1235,12 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                         </div>
                                         <div className="content ml-4 sm:ml-6">
                                             <h4 className="text-lg sm:text-xl font-semibold">
-                                                Security Advice
+                                                လုံခြုံရေး အကြံဥာဏ်
                                             </h4>
                                             <p className="text-darkblue mt-2 text-sm sm:text-base">
-                                                Security advice when needed is
-                                                available at all times.
+                                                လိုအပ်သည့်လုံခြုံရေးဆိုင်ရာ
+                                                အကြံဥာဏ်များ အချိန်မရွေး
+                                                ရရှိနိုင်ခြင်း။
                                             </p>
                                         </div>
                                     </div>
@@ -1246,13 +1270,15 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                         </div>
                                         <div className="content ml-4 sm:ml-6">
                                             <h4 className="text-lg sm:text-xl font-semibold">
-                                                24/7 Peace of Mind
+                                                ၂၄ နာရီ/ ၇ ရက် လုံခြုံစိတ်ချမှု
                                             </h4>
                                             <p className="text-darkblue mt-2 text-sm sm:text-base">
-                                                With our commitment to provide
-                                                service 24 hours a day, 7 days a
-                                                week, you can enjoy complete
-                                                peace of mind.
+                                                ၂၄နာရီ/ (၇)ရက်ပတ်လုံး နေ့/ညမရွေး
+                                                တာဝန်ယူ
+                                                ဝန်ဆောင်မှုပေးခြင်းကြောင့်
+                                                လူကြီးမင်းတို့အနေဖြင့်
+                                                အချိန်ပြည့် လုံခြုံစိတ်ချမှု
+                                                ရှိစေခြင်း။
                                             </p>
                                         </div>
                                     </div>
@@ -1281,12 +1307,12 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                         </div>
                                         <div className="content ml-4 sm:ml-6">
                                             <h4 className="text-lg sm:text-xl font-semibold">
-                                                Security and Customer Service
+                                                လုံခြုံရေးနှင့် Customer Service
                                             </h4>
                                             <p className="text-darkblue mt-2 text-sm sm:text-base">
-                                                In addition to security
-                                                services, comprehensive customer
-                                                service is available.
+                                                လုံခြုံရေးဝန်ဆောင်မှုအပြင်
+                                                Customer Service အပြည့်ဖြင့်
+                                                ဝန်ဆောင်မှုရရှိနိုင်ခြင်း။
                                             </p>
                                         </div>
                                     </div>
@@ -1315,12 +1341,13 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                         </div>
                                         <div className="content ml-4 sm:ml-6">
                                             <h4 className="text-lg sm:text-xl font-semibold">
-                                                Cost-Effective Security Uniforms
-                                                and Equipment
+                                                လုံခြုံရေး အဝတ်နှင့် ကိရိယာ
+                                                စရိတ် သက်သာခြင်း
                                             </h4>
                                             <p className="text-darkblue mt-2 text-sm sm:text-base">
-                                                We can help reduce costs for
-                                                security uniforms and equipment.
+                                                လုံခြုံရေးဆိုင်ရာ uniform နှင့်
+                                                equipment အစရှိသည်တို့အတွက်
+                                                ကုန်ကျစရိတ် သက်သာစေနိုင်ခြင်း။
                                             </p>
                                         </div>
                                     </div>
@@ -1349,17 +1376,21 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                         </div>
                                         <div className="content ml-4 sm:ml-6">
                                             <h4 className="text-lg sm:text-xl font-semibold">
-                                                Trained Security Personnel for
-                                                Emergency Situations
+                                                အရေးပေါ်ဖြစ်ရပ်များကို
+                                                ကိုင်တွယ်နိုင်သည့်
+                                                လုံခြုံရေးဝန်ထမ်းများ
                                             </h4>
                                             <p className="text-darkblue mt-2 text-sm sm:text-base">
-                                                Our security personnel are
-                                                trained to effectively handle
-                                                emergencies such as fire hazards
-                                                and unauthorized access,
-                                                ensuring full responsibility and
-                                                accountability in their
-                                                services.
+                                                မီးဘေးအန္တရာယ်နှင့်
+                                                ခွင့်ပြုချက်မရှိ
+                                                ဝင်ရောက်ခြင်းကဲ့သို့သော
+                                                အရေးပေါ်ဖြစ်ရပ်များအတွက်
+                                                ကိုင်တွယ်ဖြေရှင်းရန် စနစ်တကျ
+                                                လေ့ကျင့်သင်ကြားထားသော .
+                                                တာဝန်ယူမှု၊ တာဝန်ခံမှု
+                                                အပြည့်ရှိသည့်
+                                                လုံခြုံရေးဝန်ထမ်းများဖြင့်
+                                                ဝန်ဆောင်မှုကိုရရှိခြင်း။
                                             </p>
                                         </div>
                                     </div>
@@ -1372,7 +1403,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                             <div className="bg-mild text-darkblue contact_form_container repair-request-form bg-gray-100 px-4 sm:px-6 md:px-10 rounded-lg shadow-md py-8 sm:py-10 md:py-20 mt-10 lg:mt-0">
                                 <div className="ct-title-2 flex justify-center items-center mb-6 sm:mb-10">
                                     <span className="text-xl sm:text-2xl md:text-3xl font-semibold">
-                                        Request a Quote
+                                        Qoute တောင်းရန်
                                     </span>
                                 </div>
 
@@ -1382,23 +1413,23 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                             <input
                                                 type="text"
                                                 className="w-full rounded p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-darkblue"
-                                                placeholder="Name*"
+                                                placeholder="နာမည်*"
                                             />
                                             <input
                                                 type="text"
                                                 className="w-full rounded p-2 sm:p-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-darkblue"
-                                                placeholder="Subject*"
+                                                placeholder="အကြောင်းအရာ*"
                                             />
                                             <textarea
                                                 name="message"
                                                 className="w-full h-24 sm:h-32 rounded p-2 sm:p-3 text-sm sm:text-base border-gray-300 focus:outline-none focus:ring-2 focus:ring-darkblue resize-none"
-                                                placeholder="Your Message*"
+                                                placeholder="သင့်ရဲ့ မက်ဆေ့*"
                                             />
                                             <button
                                                 type="submit"
                                                 className="w-full bg-rosesecondary text-white py-2 sm:py-3 rounded text-sm sm:text-base hover:bg-darkblue transition-all duration-300 ease-in-out transform"
                                             >
-                                                Submit Inquiry
+                                                ပို့ရန်
                                             </button>
                                         </div>
                                     </form>
@@ -1423,10 +1454,10 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                         <div className="w-full lg:w-1/2 mb-8 lg:mb-0 px-4">
                             <div className="title text-white">
                                 <h4 className="text-lg font-semibold text-center lg:text-left">
-                                    Join Our Volunteer
+                                    စေတနာ့ဝန်ထမ်း အဖွဲ့သို့ ပူးပေါင်းပါ
                                 </h4>
                                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2 text-center lg:text-left">
-                                    Subscribe to Our Newsletter.
+                                    သတင်းလွှာကို စာရင်းပေးသွင်းပါ
                                 </h2>
                             </div>
                         </div>
@@ -1439,14 +1470,14 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                 <div className="input-box flex flex-col sm:flex-row items-center w-full space-y-4 sm:space-y-0 sm:space-x-4">
                                     <input
                                         type="email"
-                                        placeholder="Enter Your Email*"
+                                        placeholder="အီးမေးလ်ကို ထည့်သွင်းပါ*"
                                         className="py-3 px-4 italic placeholder:italic focus:outline-none border text-mild border-mild bg-transparent w-full sm:w-[350px] lg:w-[400px]"
                                     />
                                     <button
                                         type="submit"
                                         className="bg-rosesecondary hover:bg-rose text-black hover:text-mild py-3 px-6 transition-all duration-300 ease-in-out transform hover:scale-105 w-full sm:w-[180px]"
                                     >
-                                        Subscribe
+                                        စာရင်းသွင်းပါ
                                     </button>
                                 </div>
                             </form>
@@ -1463,7 +1494,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                         <div className="text-center">
                             <div className="section-title">
                                 <h2 className="text-4xl font-bold mb-4 text-darkblue">
-                                    Our B.O.D
+                                    Board of Directors များ
                                 </h2>
                                 <div className="flex w-full h-0.5 justify-center items-center mb-4">
                                     <div className="w-[10%] h-full bg-black"></div>
@@ -1471,9 +1502,11 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                     <div className="w-[10%] h-full bg-black"></div>
                                 </div>
                                 <p className="font-light text-darkblue">
-                                    Our Board of Directors is made up of
-                                    experienced professionals <br /> who lead
-                                    our business towards success
+                                    Board of Directors အဖွဲ့သည်
+                                    အတွေ့အကြုံပြည့်ဝသည့်
+                                    ပရော်ဖက်ရှင်နယ်များဖြင့် <br />
+                                    ဖွဲ့စည်းထားပြီး လုပ်ငန်းကို
+                                    အောင်မြင်မှုဆီသို့ ဦးဆောင်ပေးနေပါသည်
                                 </p>
                             </div>
                         </div>
@@ -1555,7 +1588,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12 text-darkblue">
                         <h2 className="text-4xl font-bold mb-4 text-darkblue">
-                            Latest Blog Posts
+                            ဘလော့ ပို့စ်များ
                         </h2>
                         <div className="flex w-full h-0.5 justify-center items-center mb-4">
                             <div className="w-[4%] h-full bg-black"></div>
@@ -1563,9 +1596,11 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                             <div className="w-[4%] h-full bg-black"></div>
                         </div>
                         <p className="font-light text-darkblue">
-                            Our blog posts cover a wide range of topics,{' '}
-                            <br className="hidden sm:inline" /> from security
-                            tips and industry trends to company updates
+                            ဘလော့ခ်ပို့စ်များတွင် လုံခြုံရေးအကြံပြုချက်များ၊
+                            လုပ်ငန်းခွင်အတွေးအခေါ်များနှင့်
+                            <br className="hidden sm:inline" />
+                            ကုမ္ပဏီသတင်းအချက်အလက်များ အပါအဝင်
+                            အကြောင်းအရာများစွာကို အကျယ်ချုပ်လေ့လာပါ
                         </p>
                     </div>
 
@@ -1650,7 +1685,7 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                                     href="/posts"
                                                     className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 rounded-full text-white bg-rose hover:bg-darkblue transition-colors duration-300 text-xs sm:text-sm md:text-base float-start"
                                                 >
-                                                    READ MORE
+                                                    ဆက်ဖတ်ရန်
                                                 </a>
                                             </div>
                                         </div>
@@ -1675,9 +1710,11 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                                 <span className="text-rosesecondary">US</span>
                             </h5>
                             <p className="text-sm leading-7">
-                                We offer a range of services designed to meet
-                                your needs, ensuring quality and professionalism
-                                at every step.
+                                Safe Forever သည် သင့်လိုအပ်ချက်များကို
+                                ဖြည့်ဆည်းရန် ရည်ရွယ်ထားသည့်
+                                ဝန်ဆောင်မှုများစွာကို ထုတ်ပေးပြီး အရည်အသွေးနှင့်
+                                ပရော်ဖက်ရှင်နယ်ဆန်မှုကို သေချာစွာ အလေးထား
+                                ဆောင်ရွက်ပါသည်
                             </p>
                         </div>
 
@@ -1716,27 +1753,27 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
                             <ul className="text-sm space-y-2 leading-7">
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Home
+                                        မူလစာမျက်နှာ
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        About
+                                        အကြောင်းအရာ
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Services
+                                        ၀န်ဆောင်မှုများ
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Blog
+                                        ဘလော့ခ်
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#" className="hover:text-rose">
-                                        Contact
+                                        ဆက်သွယ်ရန်
                                     </a>
                                 </li>
                             </ul>
@@ -1744,12 +1781,13 @@ Safe Forever Admin Team  မှ ဆုတောင်းမေတ္တာ ပ�
 
                         <div className="w-full flex flex-col px-4 mb-5">
                             <h5 className="text-lg font-bold mb-4 leading-7">
-                                NEWSLETTER{' '}
-                                <span className="text-rosesecondary">NOW</span>
+                                သတင်းလွှာ{' '}
+                                <span className="text-rosesecondary"></span>
                             </h5>
                             <p className="text-sm mb-4 leading-7">
-                                Stay updated with the latest news and offers by
-                                subscribing to our newsletter.
+                                Safe Forever နဲ့ ပတ်သက်ပြီး နောက်ဆုံးပေါ်
+                                သတင်းများကို သတိပြုရန် သတင်းလွှာကို
+                                စာရင်းသွင်းပါ
                             </p>
                             <div className="flex mb-4">
                                 <input

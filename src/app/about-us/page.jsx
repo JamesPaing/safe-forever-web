@@ -169,6 +169,23 @@ const Page = () => {
                                             <FaLinkedin />
                                         </a>
                                     </li>
+                                    <li className="pl-10">
+                                        <a
+                                            href="/"
+                                            className="hover:text-rosesecondary"
+                                        >
+                                            {/* @ts-ignore */}
+                                            <img src="/eng.png" width={17} />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="/mm"
+                                            className="hover:text-rosesecondary"
+                                        >
+                                            <img src="/mm.png" width={17} />
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -692,8 +709,8 @@ const Page = () => {
                             <div className="flex items-start justify-start lg:p-12 p-8 w-full">
                                 <div className="w-full flex flex-col justify-center">
                                     <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-                                        Safe Forever လုံခြုံရေးဝန်ဆောင်မှု{' '}
-                                        <br /> သင့်အတွက် ထာဝရလုံခြုံမှု
+                                        Safe Forever Security Services
+                                        <br /> Permanent Security for You
                                     </h3>
                                     <div className="flex w-full h-1">
                                         <div className="w-[10%] h-[50%] bg-black"></div>
@@ -701,17 +718,14 @@ const Page = () => {
                                     </div>
                                     <br />
                                     <p className="mb-4 font-light text-lg">
-                                        လူကြီးမင်းတို့ တန်ဖိုးထားတဲ့
-                                        အရာရာတိုင်းအတွက် ထာဝရလုံခြုံစေဖို့
-                                        မိမိတို့ Safe Forever security service
-                                        ကုမ္ပဏီမှ လုံခြုံရေးဆိုင်ရာ Free Survey
-                                        များလာရောက်ဆင်းပေးခြင်း၊ အကြံဥာဏ်များ
-                                        ဆွေးနွေးတင်ပြခြင်းများဖြင့်
-                                        လုံခြုံရေးဝန်ဆောင်မှုများ
-                                        ဆောင်ရွက်ပေးလျက်ရှိပါတယ်။ ဤ Video
-                                        လေးကတော့ မိမိတို့ Safe Forever
-                                        ကုမ္ပဏီဖြင့် လက်တွဲဆောင်ရွက်ခြင်းဖြင့်
-                                        ရရှိနိုင်သော အကျိုးကျေးဇူးများဖြစ်ပါတယ်။{' '}
+                                        To ensure the permanent security of
+                                        everything you value, our Safe Forever
+                                        security service company provides free
+                                        security surveys and consultations on
+                                        security matters. This video highlights
+                                        the benefits you can gain from
+                                        collaborating with our Safe Forever
+                                        company.
                                     </p>
                                     <p className="mb-6 font-light text-lg">
                                         {/* In reprehenderit in voluptate velit esse
